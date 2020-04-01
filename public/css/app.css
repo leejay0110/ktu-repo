@@ -1,0 +1,96 @@
+
+/* @font-face {
+    font-family: "Fira Sans";
+    src: url("../fonts/FiraSans-Regular.ttf") format("truetype");
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* html, body {
+    font-family: 'Fira Sans', sans-serif !important;
+} */
+
+.bg-blue {
+    background-color: #003554 !important;
+}
+
+.text-blue {
+    color: #003554 !important;
+}
+
+#app {
+    min-height: 100vh;
+    background-color: #F8F9FA !important;
+    background-color: #FFF !important;
+}
+
+
+#header, #app-menu {
+    /* background-color: #E6EAED !important; */
+    background-color: #F0F2F8 !important;
+    /* border-right: 1px solid #dee2e6; */
+}
+
+
+
+
+#app-content {
+    flex: 1;
+}
+
+
+/* large screens */
+@media (min-width: 992px) {
+
+    #app {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #app-menu {
+        width: 20vw;
+        border-right: 1px solid #dee2e6;
+    }
+
+    /* #menu-toggle {
+        display: none !important
+    } */
+
+    #menu-list {
+        max-height: 100vh;
+        overflow-y: auto
+    }
+
+}
+
+
+
+/* small screens */
+@media (max-width: 991.98px) {
+
+    #app-menu {
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    #menu-list {
+        max-height: 40vh;
+        overflow-y: auto
+    }
+
+}
