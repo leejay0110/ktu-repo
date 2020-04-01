@@ -4,8 +4,6 @@
     
     <div class="mx-auto" style="max-width: 350px">
 
-        @include('partials.errors')
-
         <h1 class="display-4">Sign in</h1>
         <p>Please enter your login details.</p>
 

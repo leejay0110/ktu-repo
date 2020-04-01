@@ -15,6 +15,7 @@
 
 
     @include('partials.navbar')
+    @include('partials.errors')
 
     <div id="app">
 

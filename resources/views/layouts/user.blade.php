@@ -17,6 +17,7 @@
 
     
     @include('partials.navbar')
+    @include('partials.errors')
 
     <div id="app">
 
@@ -50,9 +51,6 @@
             </div>
 
             <div class="container p-4 mb-5">
-
-                @include('partials.errors')
-
                 @yield('content')
             </div>
 

@@ -108,8 +108,7 @@ class SettingsController extends Controller
             $user->password = Hash::make($request->password_new);
             $user->save();
 
-            Auth::logout();
-            return redirect()->route('login.show')->with('success', 'Password updated successfully. Please login again.');
+            return redirect()->back()->with('success', 'Password updated successfully.');
         }
 
         return redirect()->back()->with('error', 'The old password incorrect.');

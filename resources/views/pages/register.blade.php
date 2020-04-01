@@ -6,9 +6,6 @@
 
     <div class="mx-auto" style="max-width: 350px">
 
-        @include('partials.errors')
-
-
 
         <h1 class="display-4">Register</h1>
         <p>Please provide the required information for your account creation.</p>
