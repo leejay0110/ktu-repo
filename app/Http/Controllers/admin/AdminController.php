@@ -21,10 +21,13 @@ class AdminController extends Controller
         $users = User::where('admin', 0)->get()->count();
         $deactivated = User::where('active', 0)->get()->count();
 
+        
+
         return view('dashboard.admin.index', [
             'users' => $users,
             'deactivated' => $deactivated
         ]);
 
     }
+    
 }

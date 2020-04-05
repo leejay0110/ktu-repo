@@ -48,11 +48,7 @@ Route::post('logout', 'LoginController@logout')->name('logout');
 
 Route::get('admin', 'admin\AdminController@index')->name('admin.index');
 
-Route::get('admin/settings',               'admin\SettingsController@index')->name('admin.settings');
-Route::get('admin/settings/edit-details',  'admin\SettingsController@editDetails')->name('admin.settings.edit-details');
-Route::get('admin/settings/edit-password', 'admin\SettingsController@editPassword')->name('admin.settings.edit-password');
-Route::put('admin/settings/edit-details',  'admin\SettingsController@updateDetails')->name('admin.settings.update-details');
-Route::put('admin/settings/edit-password', 'admin\SettingsController@updatePassword')->name('admin.settings.update-password');
+
 
 Route::get('admin/users', 'admin\UserController@index')->name('admin.users');
 Route::get('admin/users/{user}', 'admin\UserController@show')->name('admin.users.show');
@@ -61,6 +57,17 @@ Route::put('admin/users/{user}/password_reset', 'admin\UserController@resetPassw
 
 
 
+Route::get('admin/notifications', 'admin\NotificationController@index')->name('notifications.index');
+Route::put('admin/notifications/mark-as-read', 'admin\NotificationController@markAsRead')->name('notifications.mark-as-read');
+Route::delete('admin/notifications/delete', 'admin\NotificationController@delete')->name('notifications.delete');
+
+
+
+Route::get('admin/settings', 'admin\SettingsController@index')->name('admin.settings');
+Route::get('admin/settings/edit-details', 'admin\SettingsController@editDetails')->name('admin.settings.edit-details');
+Route::get('admin/settings/edit-password', 'admin\SettingsController@editPassword')->name('admin.settings.edit-password');
+Route::put('admin/settings/edit-details', 'admin\SettingsController@updateDetails')->name('admin.settings.update-details');
+Route::put('admin/settings/edit-password', 'admin\SettingsController@updatePassword')->name('admin.settings.update-password');
 
 
 
@@ -72,23 +79,23 @@ Route::put('admin/users/{user}/password_reset', 'admin\UserController@resetPassw
 Route::get('user', 'user\UserController@index')->name('user.index');
 
 
-Route::get('user/settings',               'user\SettingsController@index')->name('user.settings');
-Route::get('user/settings/edit-details',  'user\SettingsController@editDetails')->name('user.settings.edit-details');
-Route::get('user/settings/edit-avatar',  'user\SettingsController@editAvatar')->name('user.settings.edit-avatar');
+Route::get('user/settings', 'user\SettingsController@index')->name('user.settings');
+Route::get('user/settings/edit-details', 'user\SettingsController@editDetails')->name('user.settings.edit-details');
+Route::get('user/settings/edit-avatar', 'user\SettingsController@editAvatar')->name('user.settings.edit-avatar');
 Route::get('user/settings/edit-password', 'user\SettingsController@editPassword')->name('user.settings.edit-password');
-Route::put('user/settings/edit-details',  'user\SettingsController@updateDetails')->name('user.settings.update-details');
+Route::put('user/settings/edit-details', 'user\SettingsController@updateDetails')->name('user.settings.update-details');
 Route::put('user/settings/edit-password', 'user\SettingsController@updatePassword')->name('user.settings.update-password');
 Route::put('user/settings/update-avatar', 'user\SettingsController@updateAvatar')->name('user.settings.update-avatar');
 Route::delete('user/settings/delete-avatar', 'user\SettingsController@deleteAvatar')->name('user.settings.delete-avatar');
 
 
-Route::get('user/papers',               'user\PaperController@index')->name('user.papers');
-Route::get('user/papers/create',        'user\PaperController@create')->name('user.papers.create');
-Route::post('user/papers/create',       'user\PaperController@store')->name('user.papers.store');
-Route::get('user/papers/{paper}',       'user\PaperController@show')->name('user.papers.show');
-Route::get('user/papers/{paper}/edit',  'user\PaperController@edit')->name('user.papers.edit');
-Route::put('user/papers/{paper}',  'user\PaperController@update')->name('user.papers.update');
-Route::delete('user/papers/{paper}',  'user\PaperController@destroy')->name('user.papers.destroy');
+Route::get('user/papers', 'user\PaperController@index')->name('user.papers');
+Route::get('user/papers/create', 'user\PaperController@create')->name('user.papers.create');
+Route::post('user/papers/create', 'user\PaperController@store')->name('user.papers.store');
+Route::get('user/papers/{paper}', 'user\PaperController@show')->name('user.papers.show');
+Route::get('user/papers/{paper}/edit', 'user\PaperController@edit')->name('user.papers.edit');
+Route::put('user/papers/{paper}', 'user\PaperController@update')->name('user.papers.update');
+Route::delete('user/papers/{paper}', 'user\PaperController@destroy')->name('user.papers.destroy');
 
 
 Route::get('user/materials', 'user\MaterialController@index')->name('user.materials');

@@ -12,7 +12,7 @@
         <li class="list-group-item">
             <div class="d-flex align-items-center">
 
-                <img src="{{ asset('img/lee.jpg')  }}" class="img-thumbnail rounded-circle mr-5">
+                <img src="{{ asset('img/developers/lee.jpg')  }}" class="img-thumbnail rounded-circle mr-5">
                 <dl class="row flex-fill">
                     <dt class="col-lg-3">Name</dt>
                     <dd class="col-lg-9">John Lee</dd>
@@ -30,7 +30,7 @@
         <li class="list-group-item">
             <div class="d-flex align-items-center">
 
-                <img src="{{ asset('img/thompson.jpg')  }}" class="img-thumbnail rounded-circle mr-5">
+                <img src="{{ asset('img/developers/thompson.jpg')  }}" class="img-thumbnail rounded-circle mr-5">
                 <dl class="row flex-fill">
                     <dt class="col-lg-3">Name</dt>
                     <dd class="col-lg-9">Isaac Thompson</dd>
@@ -45,7 +45,7 @@
         <li class="list-group-item">
             <div class="d-flex align-items-center">
 
-                <img src="{{ asset('img/frimpong.jpg')  }}" class="img-thumbnail rounded-circle mr-5">
+                <img src="{{ asset('img/developers/frimpong.jpg')  }}" class="img-thumbnail rounded-circle mr-5">
                 <dl class="row flex-fill">
                     <dt class="col-lg-3">Name</dt>
                     <dd class="col-lg-9">Emmanuel Adu Frimpong</dd>
@@ -59,7 +59,7 @@
 
         <li class="list-group-item">
             <div class="d-flex align-items-center">
-                <img src="{{ asset('img/gadzo.jpg')  }}" class="img-thumbnail rounded-circle mr-5">
+                <img src="{{ asset('img/developers/gadzo.jpg')  }}" class="img-thumbnail rounded-circle mr-5">
                 <dl class="row flex-fill">
                     <dt class="col-lg-3">Name</dt>
                     <dd class="col-lg-9">Patrick Gadzo</dd>

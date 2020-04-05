@@ -12,5 +12,6 @@
 <nav class="nav flex-column">
     <a class="nav-link text-dark" href="{{ route('admin.index') }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
     <a class="nav-link text-dark" href="{{ route('admin.users') }}"><i class="fas fa-users"></i> Users</a>
+    <a class="nav-link text-dark" href="{{ route('notifications.index') }}"><i class="fas fa-bell"></i> Notifications</a>
     <a class="nav-link text-dark" href="{{ route('admin.settings') }}"><i class="fas fa-cog"></i> Settings</a>
 </nav>

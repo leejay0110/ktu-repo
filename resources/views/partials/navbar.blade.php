@@ -31,9 +31,47 @@
 
             @auth
             
+                @if (Auth::user()->isAdmin())
+                    
+                    @if ( Auth::user()->unreadNotifications->count() )
+                        
+                        <div class="dropdown">
+    
+                            <button class="btn text-white dropdown-toggle" type="button" id="notificationsDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell"></i>
+                                <span class="badge badge-pill badge-light">
+                                    {{ Auth::user()->unreadNotifications->count() }}
+                                </span>
+                            </button>
+    
+                            <div class="dropdown-menu dropdown-menu-left dropdown-menu-lg-right" aria-labelledby="notificationsDropdown">
+    
+    
+                                @foreach (Auth::user()->unreadNotifications as $notification)
+    
+                                    <a class="dropdown-item disabled">
+                                        {{ $notification->data['name'] }} registered {{ $notification->created_at->diffForHumans() }}
+                                    </a>
+    
+                                @endforeach
+
+                                <div class="dropdown-divider"></div>
+
+                                <a href="{{ route('notifications.index') }}" class="dropdown-item">View Notifications</a>
+    
+    
+                            </div>
+    
+                        </div>
+
+                    @endif
+
+                @endif
+
+
                 <div class="dropdown">
 
-                    <button class="btn text-white dropdown-toggle p-0" type="button" id="appDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn text-white dropdown-toggle" type="button" id="appDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-user-circle"></i>
                         {{ Auth::user()->username }}
                     </button>
