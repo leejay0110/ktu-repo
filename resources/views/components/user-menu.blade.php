@@ -1,4 +1,3 @@
-
 <div class="text-center">
     
     @if ( Auth::user()->avatar )

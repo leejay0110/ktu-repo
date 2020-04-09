@@ -12,8 +12,8 @@ class MaterialController extends Controller
 
     public function index()
     {
-        $users = User::where('admin', 0)->orderBy('name')->get();
-        return view('pages.material.index', ['users' => $users]);
+        
+        return view('pages.material.index');
     }
 
 
@@ -39,19 +39,15 @@ class MaterialController extends Controller
 
     public function show(Material $material)
     {
-        $users = User::where('admin', 0)->orderBy('name')->get();
         return view('pages.material.show', [
-            'material' => $material,
-            'users' => $users
+            'material' => $material
         ]);
     }
 
     public function user(User $user)
     {
-        $users = User::where('admin', 0)->orderBy('name')->get();
         return view('pages.material.user', [
-            'users' => $users,
-            'user' => $user,
+            'user' => $user
         ]);
     }
 

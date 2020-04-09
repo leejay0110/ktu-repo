@@ -24,7 +24,7 @@
 
         <section id="app-menu" class="bg-white">
             <div class="container p-4">
-                @include('partials.user.menu')
+                <x-user-menu/>
             </div>
         </section>
 
