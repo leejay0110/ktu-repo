@@ -51,7 +51,7 @@
                                 <tr>
                                     <td>
                                         {{ $user->name }} &Tilde;
-                                        <a href="{{ route('admin.users.show', $user->id) }}">{{ $user->username }}</a>
+                                        <a href="{{ route('admin.users.show', $user) }}">{{ $user->username }}</a>
                                     </td>
                                     <td>{{ $user->created_at->isoFormat('LLL') }}</td>
                                     <td>
@@ -109,7 +109,7 @@
                                 <tr>
                                     <td>
                                         {{ $user->name }} &Tilde;
-                                        <a href="{{ route('admin.users.show', $user->id) }}">{{ $user->username }}</a>
+                                        <a href="{{ route('admin.users.show', $user) }}">{{ $user->username }}</a>
                                     </td>
                                     <td>{{ $user->created_at->isoFormat('LLL') }}</td>
                                 </tr>

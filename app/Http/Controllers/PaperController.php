@@ -10,7 +10,12 @@ class PaperController extends Controller
 
     public function index()
     {
-        return view('pages.paper.index');
+        // Recently Uploaded Papers
+        $papers = Paper::latest()->limit(3)->get();
+
+        return view('pages.paper.index', [
+            'papers' => $papers
+        ]);
     }
 
 

@@ -13,7 +13,7 @@
     @yield('style')
     
 </head>
-<body class="bg-white">
+<body>
 
     
     @include('partials.navbar')
@@ -22,7 +22,7 @@
     <div id="app">
 
 
-        <section id="app-menu" class="bg-white">
+        <section id="app-menu">
             <div class="container p-4">
                 <x-material-users/>
             </div>
@@ -37,7 +37,7 @@
                 <div class="d-flex">
 
                     <div class="mr-4">
-                        <button class="btn btn-dark" id="menu-toggle" style="padding: 11px 16px; font-size: 1rem">
+                        <button class="btn bg-blue text-white" id="menu-toggle" style="padding: 11px 16px; font-size: 1rem">
                             <i class="fas fa-bars"></i>
                         </button>
                     </div>

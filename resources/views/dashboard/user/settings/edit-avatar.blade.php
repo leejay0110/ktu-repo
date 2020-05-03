@@ -7,7 +7,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item" aria-current="page">
-                <a href="{{ route('user.settings') }}">Profile</a>
+                <a href="{{ route('user.settings') }}">Settings</a>
             </li>
             <li class="breadcrumb-item active" aria-current="page">Edit Avatar</li>
         </ol>
@@ -20,37 +20,42 @@
 @section('content')
 
 
-    <h1 class="display-4">Edit Avatar</h1>
+    <div class="bg-white rounded-lg shadow-sm p-4 p-lg-5 mb-5">
 
-    <br>
-
-
-    <form action="{{ route('user.settings.update-avatar') }}" method="POST" enctype="multipart/form-data">
-
-        @csrf
-        @method('put')
-
-
-        <div class="form-group row">
-            <label class="col-lg-3 col-form-label">Profle Picture</label>
-            <div class="col-lg-9">
-                <input type="file" class="form-control-file" name="avatar" id="materials" accept="image/png, image/jpeg" required>
-                <small class="text-danger">{{ $errors->first('avatar') }}</small>
-            </div>
-        </div>
-
-        
-        <div class="form-group row">
-            <div class="col-lg-9 offset-lg-3">
-                <button type="submit" class="btn btn-secondary">change</button>
-            </div>
-        </div>
-
-
-    </form>
-
+        <h3>Edit Avatar</h3>
     
-
+        <hr>
+    
+    
+        <form action="{{ route('user.settings.update-avatar') }}" method="POST" enctype="multipart/form-data">
+    
+            @csrf
+            @method('put')
+    
+    
+            <div class="form-group row">
+                <label class="col-lg-3 col-form-label">Profle Picture</label>
+                <div class="col-lg-9">
+                    <input type="file" class="form-control-file" name="avatar" id="materials" accept="image/png, image/jpeg" required>
+                    <small class="text-danger">{{ $errors->first('avatar') }}</small>
+                </div>
+            </div>
+    
+            
+            <div class="form-group row">
+                <div class="col-lg-9 offset-lg-3">
+                    <button type="submit" class="btn btn-success">Update</button>
+                </div>
+            </div>
+    
+    
+        </form>
+    
+        
+    
+        
+    </div>
+    
     @if (Auth::user()->avatar)
 
 
@@ -58,11 +63,7 @@
             @csrf
             @method('delete')
 
-            <div class="form-group row">
-                <div class="col-lg-9 offset-lg-3">
-                    <button type="submit" class="btn btn-danger">delete</button>
-                </div>
-            </div>
+            <button type="submit" class="btn btn-dark">Delete Avatar</button>
 
         </form>
 

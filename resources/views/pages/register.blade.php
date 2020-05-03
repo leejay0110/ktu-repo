@@ -4,10 +4,10 @@
 
 @section('content')
 
-    <div class="mx-auto" style="max-width: 350px">
+    <div class="mx-auto" style="max-width: 24rem">
 
 
-        <h1 class="display-4">Register</h1>
+        <h1>Register</h1>
         <p>Please provide the required information for your account creation.</p>
 
         <br>
@@ -48,7 +48,7 @@
                 @endif
             </div>
     
-            <button type="submit" class="btn btn-secondary btn-block">submit</button>
+            <button type="submit" class="btn btn-success btn-block">submit</button>
     
         </form>
 

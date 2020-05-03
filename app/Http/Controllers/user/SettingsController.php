@@ -71,7 +71,7 @@ class SettingsController extends Controller
         $user->avatar = $path;
         $user->save();
         
-        return redirect()->route('user.settings')->with('success', 'Image updated successfully.');
+        return redirect()->back()->with('success', 'Avatar updated successfully.');
         
     }
 
@@ -83,7 +83,7 @@ class SettingsController extends Controller
         $user->avatar = null;
         $user->save();
 
-        return redirect()->route('user.settings')->with('success', 'Image deleted successfully.');
+        return redirect()->back()->with('success', 'Avatar deleted successfully.');
     }
 
 

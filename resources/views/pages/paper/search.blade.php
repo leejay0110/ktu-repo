@@ -1,11 +1,7 @@
-<div class="text-center mb-5">
-
-    <h5>
-        <i class="fas fa-search"></i>
-        Search Results
-    </h5>
-
-</div>
+<h5 class="font-weight-bold text-muted mb-4">
+    Search Results
+    <i class="fas fa-search"></i>
+</h5>
 
 
 @if ($papers->count())
@@ -16,41 +12,37 @@
 
             <div class="col mb-4">
 
-                <div class="card" style="background-color: #F0F2F8 !important;">
+                <div class="bg-white rounded-lg shadow-sm p-4 p-lg-5">
                     
-                    <div class="card-header">
-                        <i class="fas fa-file-pdf"></i>
-                        {{ $paper->course_title }} &Tilde; {{ $paper->course_code }}
-                    </div>
+                    <h5 class="mb-0">{{ $paper->course_title }}</h5>
+                    <small class="text-muted">{{ $paper->course_code }}</small>
+                    
+                    <hr>
 
-                    <div class="card-body">
+                    <dl class="row mb-4 text-muted">
 
-                        <dl class="row mb-3">
+                        <dt class="col-lg-3">Examiner</dt>
+                        <dd class="col-lg-9  mb-0">{{ $paper->examiner }}</dd>
 
-                            <dt class="col-3">Examiner</dt>
-                            <dd class="col-9  mb-0">{{ $paper->examiner }}</dd>
+                        <dt class="col-lg-3">Year</dt>
+                        <dd class="col-lg-9  mb-0">{{ $paper->year }}</dd>
 
-                            <dt class="col-3">Year</dt>
-                            <dd class="col-9  mb-0">{{ $paper->year }}</dd>
+                        <dt class="col-lg-3">Semester</dt>
+                        <dd class="col-lg-9  mb-0">{{ $paper->semester }}</dd>
 
-                            <dt class="col-3">Semester</dt>
-                            <dd class="col-9  mb-0">{{ $paper->semester }}</dd>
+                        <dt class="col-lg-3">Created</dt>
+                        <dd class="col-lg-9  mb-0">
+                            <span title="{{ $paper->created_at->isoFormat('LLL') }}">
+                                {{ $paper->created_at->diffForHumans() }}
+                            </span>
+                        </dd>
 
-                            <dt class="col-3">Created</dt>
-                            <dd class="col-9  mb-0">
-                                <span title="{{ $paper->created_at->isoFormat('LLL') }}">
-                                    {{ $paper->created_at->diffForHumans() }}
-                                </span>
-                            </dd>
-
-                        </dl>
-
-                        <a href="" class="btn btn-success btn-sm">
-                            <i class="fas fa-download"></i> download
-                        </a>
-                            
-    
-                    </div>
+                    </dl>                    
+                    
+                    <a href="{{ route('papers.download', $paper) }}" class="btn btn-success">
+                        Download
+                        <i class="fas fa-download"></i>
+                    </a>
 
                 </div>
 
@@ -59,48 +51,6 @@
         @endforeach
 
     </div>
-
-    {{-- <div class="table-responsive">
-
-        <table class="table table-borderless table-striped table-hover">
-
-            <thead>
-                <tr>
-                    <th>Course Title &Tilde; Course Code</th>
-                    <th>Examiner Name</th>
-                    <th>Year &Tilde; Semester</th>
-                    <th>Created</th>
-                    <th></th>
-                </tr>
-            </thead>
-
-            <tbody>
-
-                @foreach ($papers as $paper)
-                
-                    <tr>
-                        <td>{{ $paper->course_title }} &Tilde; {{ $paper->course_code }}</td>
-                        <td>{{ $paper->examiner }}</td>
-                        <td>{{ $paper->year }} &Tilde; {{ $paper->semester }}</td>
-                        <td>
-                            <span title="{{ $paper->created_at->isoFormat('LLL') }}">
-                                {{ $paper->created_at->diffForHumans() }}
-                            </span>
-                        </td>
-                        <td>
-                            <a href="{{ route('papers.download', $paper) }}" target="_blank">
-                                <i class="fas fa-download"></i>
-                            </a>
-                        </td>
-                    </tr>
-
-                @endforeach
-
-            </tbody>
-
-        </div>
-
-    </div> --}}
 
 @else
 

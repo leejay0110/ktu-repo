@@ -44,7 +44,7 @@ class MaterialController extends Controller
         ]);
         
         $credentials['folder'] = "materials/" . uniqid('cm_');
-        $post = Auth::User()->materials()->create($credentials);
+        $material = Auth::User()->materials()->create($credentials);
 
 
         if ($request->hasFile('files')) {
@@ -52,9 +52,9 @@ class MaterialController extends Controller
             foreach ($request->file('files') as $file) {
 
                 $filename = Str::random(40) . ".{$file->getClientOriginalExtension()}";
-                $path = $file->storeAs("public/{$post->folder}", $filename);
+                $path = $file->storeAs("public/{$material->folder}", $filename);
 
-                $post->files()->create([
+                $material->files()->create([
                     'filename' => $file->getClientOriginalName(),
                     'path' => $path
                 ]);
@@ -63,7 +63,7 @@ class MaterialController extends Controller
             
         }
 
-        return redirect()->route('user.materials')->with('success', 'Material successfully created.');
+        return redirect()->route('user.materials.show', $material)->with('success', 'Material successfully created.');
         
     }
 

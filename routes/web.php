@@ -23,8 +23,7 @@ Route::get('/materials/search', 'MaterialController@search')->name('materials.se
 Route::get('/materials/{material}', 'MaterialController@show')->name('materials.show');
 Route::get('/materials/users/{user}', 'MaterialController@user')->name('materials.user');
 
-Route::get('/about/kturepo', 'AboutController@index')->name('about.index');
-Route::get('/about/developers', 'AboutController@developers')->name('about.developers');
+Route::get('/about', 'AboutController@index')->name('about');
 
 
 
@@ -52,14 +51,18 @@ Route::get('admin', 'admin\AdminController@index')->name('admin.index');
 
 Route::get('admin/users', 'admin\UserController@index')->name('admin.users');
 Route::get('admin/users/{user}', 'admin\UserController@show')->name('admin.users.show');
-Route::put('admin/users/{user}/toggle_status', 'admin\UserController@toggleStatus')->name('admin.users.toggle_status');
+Route::put('admin/users/{user}/activate', 'admin\UserController@activate')->name('admin.users.activate');
+Route::put('admin/users/{user}/deactivate', 'admin\UserController@deactivate')->name('admin.users.deactivate');
 Route::put('admin/users/{user}/password_reset', 'admin\UserController@resetPassword')->name('admin.users.password_reset');
 
 
 
 Route::get('admin/notifications', 'admin\NotificationController@index')->name('notifications.index');
-Route::put('admin/notifications/mark-as-read', 'admin\NotificationController@markAsRead')->name('notifications.mark-as-read');
+Route::get('admin/notifications/{notification}', 'admin\NotificationController@show')->name('notifications.show');
+
+Route::put('admin/notifications/mark-all-as-read', 'admin\NotificationController@markAllAsRead')->name('notifications.mark-all-as-read');
 Route::delete('admin/notifications/delete', 'admin\NotificationController@delete')->name('notifications.delete');
+
 
 
 

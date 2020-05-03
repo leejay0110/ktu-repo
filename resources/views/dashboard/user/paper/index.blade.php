@@ -13,61 +13,73 @@
 
 @section('content')
 
-    <a href="{{ route('user.papers.create') }}" class="btn btn-primary btn-block mb-5">add past exam paper</a>
+
+
+    <a href="{{ route('user.papers.create') }}" class="btn btn-success mb-5">Add Past Exam Paper</a>
 
 
     
-    @if (Auth::user()->papers->count())
+    <div class="bg-white rounded-lg shadow-sm p-4 p-lg-5">
+        
+        @if (Auth::user()->papers->count())
 
-        <div class="table-responsive">
-    
-            <table class="table table-borderless table-striped table-hover">
+            <div class="table-responsive">
+        
+                <table class="table table-borderless table-striped table-hover">
 
-                <caption>
-                    Past Exam Papers
-                    <span class="badge badge-pill badge-dark">{{ Auth::user()->papers->count() }}</span>
-                </caption>
+                    <caption>
+                        Past Exam Papers
+                        <span class="badge badge-pill badge-dark">{{ Auth::user()->papers->count() }}</span>
+                    </caption>
 
-                <thead>
-                    <th>Course Title &Tilde; Course Code</th>
-                    <th>Examiner Name</th>
-                    <th>Year - Semester</th>
-                    <th>Created</th>
-                    <th></th>
-                </thead>
+                    <thead>
+                        <th>Course Title &Tilde; Course Code</th>
+                        <th>Year - Semester</th>
+                        <th>Created</th>
+                        <th></th>
+                    </thead>
 
-                <tbody>
+                    <tbody>
 
-                    @foreach (Auth::user()->papers as $paper)
-                    
-                        <tr>
+                        @foreach (Auth::user()->papers as $paper)
+                        
+                            <tr>
 
-                            <td>{{ $paper->course_title }} &Tilde; {{ $paper->course_code }}</td>
-                            <td>{{ $paper->examiner }}</td>
-                            <td>{{ $paper->year }} - {{ $paper->semester }}</td>
-                            <td>
-                                <span title="{{ $paper->created_at->isoFormat('LLL') }}">
-                                    {{ $paper->created_at->diffForHumans() }}
-                                </span>
-                            </td>
-                            <td><a href="{{ route('user.papers.show', $paper->id) }}"><i class="fas fa-eye fa-lg"></i></a></td>
+                                <td>
+                                    <a href="{{ route('user.papers.show', $paper) }}">
+                                        {{ $paper->course_title }} &Tilde; {{ $paper->course_code }}
+                                    </a>
+                                </td>
+                                <td>{{ $paper->year }} - {{ $paper->semester }}</td>
+                                <td>
+                                    <span title="{{ $paper->created_at->isoFormat('LLL') }}">
+                                        {{ $paper->created_at->diffForHumans() }}
+                                    </span>
+                                </td>
+                                <td>
+                                    <a href="{{ route('papers.download', $paper) }}">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                </td>
 
-                        </tr>
-            
-                    @endforeach
+                            </tr>
+                
+                        @endforeach
 
-                </tbody>
+                    </tbody>
 
-            </table>
+                </table>
 
-        </div>
+            </div>
 
-    @else
-        <p class="alert alert-info">
-            <i class="fas fa-info-circle"></i>
-            No data found
-        </p>
-    @endif
+        @else
+            <p class="text-muted">
+                <i class="fas fa-info-circle"></i>
+                No data found
+            </p>
+        @endif
+
+    </div>
 
 
 @endsection

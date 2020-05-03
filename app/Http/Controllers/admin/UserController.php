@@ -39,15 +39,27 @@ class UserController extends Controller
     }
 
 
-    function toggleStatus(User $user)
+    function activate(User $user)
     {
 
-        $user->active = $user->isActive() ? 0 : 1;
+        $user->active = 1;
         $user->save();
 
-        return redirect()->back()->with('success', 'Active status updated successful.');
+        return redirect()->back()->with('success', 'User activated successful.');
 
     }
+
+    function deactivate(User $user)
+    {
+
+        $user->active = 0;
+        $user->save();
+
+        return redirect()->back()->with('success', 'User deactived successful.');
+
+    }
+
+
 
     function resetPassword(User $user)
     {

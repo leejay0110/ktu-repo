@@ -1,10 +1,9 @@
 <div class="text-center">
-    <i class="fas fa-users fa-3x"></i>
-    <h5>Platform Users</h5>
+    <i class="fas fa-users fa-2x"></i> <br>
+    <h6>Platform Users</h6>
 </div>
 
 <hr>
-
 
 <div class="" id="menu-list">
 
@@ -12,7 +11,7 @@
 
     <nav class="nav flex-column">
         @foreach ($users as $user)
-            <a class="nav-link px-0 text-dark" href="{{ route('materials.user', $user) }}">{{ $user->name }}</a>
+            <a class="nav-link px-0 py-1 text-dark" href="{{ route('materials.user', $user) }}">{{ $user->name }}</a>
         @endforeach
     </nav>
     

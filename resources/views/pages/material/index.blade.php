@@ -18,26 +18,43 @@
 
 @section('content')
     
-    <h1 class="display-4 text-center mb-5">Course Materials</h1>
+    {{-- <h1 class="display-4 text-center mb-5">Course Materials</h1> --}}
 
-    
-    <h4>Looking for Course Materials?</h4>
-    <p>Start by typing the course title, course code or lecturer name.</p>
-    <form id="material-search" action="{{ route('materials.search') }}" method="get">
 
-        @csrf
-  
-        <div class="input-group">
-            <input list="usersList" type="search" name="query" class="form-control" id="paperSearch" autocomplete="off" required>
-            <div class="input-group-append">
-                <button type="submit" class="btn text-white" style="background-color: #ED4917">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
+    <div class="row bg-white rounded-lg shadow-sm mx-auto p-4 p-lg-5">
+
+        <div class="col-lg-5">
+            <h3 class="font-weight-bold">Looking for <br> Course Materials?</h3>
         </div>
 
+        <div class="col-lg">
 
-    </form>
+            <form id="material-search" action="{{ route('materials.search') }}" method="get">
+        
+                @csrf
+          
+                <div class="form-group">
+
+                    <label>Start by typing the course title, course code or lecturer name.</label>
+                    <div class="input-group">
+                        <input list="usersList" type="search" name="query" class="form-control" id="paperSearch" autocomplete="off" required>
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-secondary">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+        
+            </form>
+
+        </div>
+
+    </div>
+    
+    
 
     <div id="material-results" class="mt-5"></div>
 

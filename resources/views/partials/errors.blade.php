@@ -5,7 +5,6 @@
         <div class="container">
 
             <i class="fas fa-exclamation-circle"></i>
-            <strong>Error!</strong>
             {{ session('error') }}
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -24,7 +23,6 @@
         <div class="container">
 
             <i class="fas fa-check-circle"></i>
-            <strong>Success!</strong>
             {{ session('success') }}
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>

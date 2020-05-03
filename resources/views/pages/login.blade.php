@@ -2,9 +2,9 @@
 
 @section('content')
     
-    <div class="mx-auto" style="max-width: 350px">
+    <div class="mx-auto" style="max-width: 24rem">
 
-        <h1 class="display-4">Sign in</h1>
+        <h1>Sign in</h1>
         <p>Please enter your login details.</p>
 
         <br>
@@ -29,7 +29,7 @@
                 @endif
             </div>
     
-            <button type="submit" class="btn btn-secondary btn-block">sign in</button>
+            <button type="submit" class="btn btn-success btn-block">sign in</button>
     
         </form>
 

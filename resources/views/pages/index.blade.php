@@ -3,26 +3,39 @@
 
 @section('content')
 
-    <h1 class="display-4 text-center mb-5">{{ env('APP_NAME') }}</h4>
-    <p class="text-center">
-        Welcome to {{ env('APP_NAME') }}. You can read more about the site from <a href="{{ route('about.index') }}">here.</a>
-    </p>
 
-    <div class="d-flex flex-column flex-lg-row justify-content-around text-center mt-5">
+    <div class="bg-white rounded-lg shadow-sm p-4 p-lg-5 mx-auto mb-5" style="">
+    
+        <h1>{{ env('APP_NAME') }}</h1>
+        <p>
+            Welcome to KTU Repo. <br>
+            The digital archive of Koforidua Technical University.
+        </p>
 
-        <div class="mb-5">
-            <img src="{{ asset('img/paper.jpg') }}" class="img img-thumbnail rounded-circle"> <br><br>
-            <a href="{{ route('papers.index') }}" class="h5">Past Exam Papers</a>
-            <p>Downloadable PDFs of past examination papers.</p>
+        <a href="{{ route('about') }}" class="font-weight-bold">Read more</a>
+
+    </div>
+
+
+    <div class="row row-cols-1 row-cols-lg-2 text-center">
+
+        <div class="col mb-5">
+            <div class="bg-white rounded-lg shadow-sm p-4 p-lg-5">
+                <img src="{{ asset('img/paper.jpg') }}" class="rounded-circle">
+                <a href="{{ route('papers.index') }}" class="d-block h5 font-weight-bold mt-3 mb-1">Past Exam Papers</a>
+                <span>PDFs of past examination papers.</span>
+            </div>
         </div>
 
-        <div>
-            <img src="{{ asset('img/material.jpg') }}" class="img img-thumbnail rounded-circle"> <br><br>
-            <a href="{{ route('materials.index') }}" class="h5">Course Materials</a>
-            <p>Downloadable Course Materials.</p>
+        <div class="col mb-5">
+            <div class="bg-white rounded-lg shadow-sm p-4 p-lg-5">
+                <img src="{{ asset('img/material.jpg') }}" class="rounded-circle">
+                <a href="{{ route('materials.index') }}" class="d-block h5 font-weight-bold mt-3 mb-1">Course Materials</a>
+                <span>Downloadable Course Materials.</span>
+            </div>
         </div>
 
-    </div>        
+    </div> 
 
 
 @endsection

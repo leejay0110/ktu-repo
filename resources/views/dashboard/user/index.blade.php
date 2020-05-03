@@ -17,7 +17,7 @@
 
         <div class="mr-5">
 
-            <div class="border bg-light rounded text-center p-3 mb-3">
+            <div class="text-center bg-white rounded-lg shadow-sm p-4 p-lg-5 mb-3">
                 <h1 class="display-4 mb-0">{{ Auth::user()->papers->count() }}</h1>
                 <p>{{ Auth::user()->papers->count() == 1 ? 'Past Exam Paper' : 'Past Exam Papers' }}</p>
             </div>
@@ -28,7 +28,7 @@
 
         <div>
 
-            <div class="border bg-light rounded text-center p-3 mb-3">
+            <div class="text-center bg-white rounded-lg shadow-sm p-4 p-lg-5 mb-3">
                 <h1 class="display-4 mb-0">{{ Auth::user()->materials->count() }}</h1>
                 <p>{{ Auth::user()->materials->count() == 1 ? 'Course Material' : 'Course Materials' }}</p>
             </div>

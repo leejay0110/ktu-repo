@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg sticky-to navbar-dark bg-blue py-3">
+<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-blue">
 
-    <div class="container">
+    <div class="container-fluid">
 
         <a href="{{ route('homepage') }}" class="navbar-brand mb-0 h1">{{ env('APP_NAME') }}</a>
 
@@ -14,9 +14,10 @@
             <div class="navbar-nav mr-auto">
                 <a class="nav-item nav-link {{ Route::is('papers.index') ? 'active' : '' }}" href="{{ route('papers.index') }}">Past Exam Papers</a>
                 <a class="nav-item nav-link {{ Route::is('materials.*') ? 'active' : '' }}" href="{{ route('materials.index') }}">Course Materials</a>
+                <a class="nav-item nav-link {{ Route::is('about') ? 'active' : '' }}" href="{{ route('about') }}">About</a>
 
 
-                <li class="nav-item dropdown">
+                {{-- <li class="nav-item dropdown">
                     
                     <a class="nav-link {{ Route::is('about.*') ? 'active' : '' }} dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
 
@@ -24,7 +25,7 @@
                         <a class="dropdown-item" href="{{ route('about.index') }}">About KTU Repo</a>
                         <a class="dropdown-item" href="{{ route('about.developers') }}">Developers</a>
                     </div>
-                </li>
+                </li> --}}
                 
             </div>
             
@@ -49,8 +50,8 @@
     
                                 @foreach (Auth::user()->unreadNotifications as $notification)
     
-                                    <a class="dropdown-item disabled">
-                                        {{ $notification->data['name'] }} registered {{ $notification->created_at->diffForHumans() }}
+                                    <a class="dropdown-item text-primary" href="{{ route('notifications.show', $notification) }}">
+                                        New user registed {{ $notification->created_at->diffForHumans() }}
                                     </a>
     
                                 @endforeach

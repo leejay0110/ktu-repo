@@ -16,61 +16,70 @@
 
 @section('content')
 
-    <h1 class="display-4">{{ $material->course_title }} &Tilde; {{ $material->course_code }}</h1>
+    <div class="bg-white rounded-lg shadow-sm p-4 p-lg-5 mb-5">
+        
+        <h3>{{ $material->course_title }}</h3>
+        <p class="text-muted">{{ $material->course_code }}</p>
+    
+        <hr>
+    
+        <dl class="row">
+    
+            <dt class="col-lg-3">Course Title</dt>
+            <dd class="col-lg-9">{{ $material->course_title }}</dd>
+    
+            <dt class="col-lg-3">Course Code</dt>
+            <dd class="col-lg-9">{{ $material->course_code }}</dd>
+    
+            <dt class="col-lg-3">Lecturer Name</dt>
+            <dd class="col-lg-9">{{ $material->lecturer }}</dd>
+    
+            <dt class="col-lg-3">Created</dt>
+            <dd class="col-lg-9">{{ $material->created_at->isoFormat('LLL') }}</dd>
+    
+        </dl>
+    
+        <a href="{{ route('user.materials.edit', $material) }}" class="font-weight-bold">Edit Details</a>
 
-    <br>
-
-    <dl class="row mb-5">
-
-        <dt class="col-lg-3">Course Title</dt>
-        <dd class="col-lg-9">{{ $material->course_title }}</dd>
-
-        <dt class="col-lg-3">Course Code</dt>
-        <dd class="col-lg-9">{{ $material->course_code }}</dd>
-
-        <dt class="col-lg-3">Lecturer Name</dt>
-        <dd class="col-lg-9">{{ $material->lecturer }}</dd>
-
-        <dt class="col-lg-3">Created</dt>
-        <dd class="col-lg-9">{{ $material->created_at->isoFormat('LLL') }}</dd>
-
-    </dl>
-
-    <a href="{{ route('user.materials.edit', $material->id) }}" class="btn btn-secondary btn-block mb-3">Edit Details</a>
+    </div>
 
 
-    <div class="my-5">
 
-        <div class="border rounded p-3 bg-light mb-5">
+    <div class="bg-white rounded-lg shadow-sm p-4 p-lg-5 mb-5">
 
-            <h5>Add More Files</h5>
+        <h5>Add Files</h5>
 
-            <hr>
+        <hr>
 
-            <form action="{{ route('user.materials.files.upload', $material->id) }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('user.materials.files.upload', $material) }}" method="post" enctype="multipart/form-data">
 
-                @csrf
+            @csrf
 
-                <div class="form-group row">
-                    <label class="col-lg-3 col-form-label" for="files">Attach Files</label>
-                    <div class="col-lg-9">
-                        <input type="file" class="form-control-file" name="files[]" id="files" multiple="multiple">
-                        <small class="text-danger">{{ $errors->first('files') }}</small>
-                    </div>
+            <div class="form-group row">
+                <label class="col-lg-3 col-form-label" for="files">Attach Files</label>
+                <div class="col-lg-9">
+                    <input type="file" class="form-control-file" name="files[]" id="files" multiple="multiple">
+                    <small class="text-danger">{{ $errors->first('files') }}</small>
                 </div>
+            </div>
 
-                <div class="form-group row">
-                    <div class="col-lg-9 offset-lg-3">
-                        <button type="submit" class="btn btn-secondary">upload</button>
-                    </div>
+            <div class="form-group row">
+                <div class="col-lg-9 offset-lg-3">
+                    <button type="submit" class="btn btn-success">Upload</button>
                 </div>
+            </div>
 
-            </form>
+        </form>
 
-        </div>
+    </div>
 
 
+    
+    <div class="bg-white rounded-lg shadow-sm p-4 p-lg-5 mb-5">
+        
         <h5>Attached Files</h5>
+
+        <hr>
 
         @if ( $material->files->count() )
     
@@ -82,7 +91,7 @@
                         <tr>
                             <th>Filename</th>
                             <th></th>
-                            <th>File size</th>
+                            <th>Size</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -100,7 +109,7 @@
                                 </td>
                                 <td>{{ $file->size() }}</td>
                                 <th>
-                                    <a href="{{ route('user.materials.files.destroy', $file->id) }}" 
+                                    <a href="{{ route('user.materials.files.destroy', $file) }}" 
                                        {{-- onclick="event.preventDefault(); document.getElementById('delete-form-{{ $file->id }}').submit();"> --}}
 
                                        onclick="confirmFileDelete('delete-file-{{ $file->id }}');">
@@ -108,7 +117,7 @@
                                         <i class="fas fa-trash-alt"></i>
                                     </a>
 
-                                    <form id="delete-file-{{ $file->id }}" action="{{ route('user.materials.files.destroy', $file->id) }}" method="post">
+                                    <form id="delete-file-{{ $file->id }}" action="{{ route('user.materials.files.destroy', $file) }}" method="post">
                                         @csrf
                                         @method('delete')
                                     </form>
@@ -125,7 +134,7 @@
 
         @else
         
-            <p class="alert alert-info">
+            <p class="text-muted">
                 <i class="fas fa-info-circle"></i>
                 No file found
             </p>
@@ -135,12 +144,12 @@
     </div>
 
 
-    <form action="{{ route('user.materials.destroy', $material->id) }}" method="post">
+    <form action="{{ route('user.materials.destroy', $material) }}" method="post">
     
         @csrf
         @method('delete')
 
-        <button type="submit" class="btn btn-danger btn-block confirm-delete">Delete Course Material</button>
+        <button type="submit" class="btn btn-dark confirm-delete">Delete Course Material</button>
 
     </form>
 

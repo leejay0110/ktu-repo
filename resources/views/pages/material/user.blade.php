@@ -17,59 +17,63 @@
 
 
 @section('content')
-    
-    <div class="text-center mb-5">
 
+
+
+    <div class="mb-5">
+    
         @if ( $user->avatar )
-            <img src="{{ Storage::url($user->avatar) }}" alt="avatar" class="img-thumbnail rounded-circle" style="width: 7rem">
+            <img src="{{ asset('/storage' . Str::after($user->avatar, 'public')) }}" alt="avatar" class="img-thumbnail rounded-circle" style="width: 7rem">
         @else
             <img src="{{ asset('img/default.png') }}" alt="avatar" class="img-thumbnail rounded-circle" style="width: 7rem">
         @endif
-    
-        <h5>{{ $user->name }}</h5>
-
     </div>
 
 
 
     @if ($user->materials->count() )
 
-        <div class="table-responsive">
-            
-            <table class="table table-borderless table-striped table-hover">
+        <div class="bg-white rounded-lg shadow-sm p-4 p-lg-5 mb-5">
+
+            <div class="table-responsive">
                 
-                <thead>
-                    <tr>
-                        <th>Course Title &Tilde; Course Code</th>
-                        <th>Lecturer Name</th>
-                        <th>Files</th>
-                        <th></th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    @foreach ($user->materials as $material)
+                <table class="table table-borderless table-striped table-hover">
+                    
+                    <thead>
                         <tr>
-                            <td>{{ $material->course_title }} &Tilde; {{ $material->course_code }}</td>
-                            <td>{{ $material->lecturer }}</td>
-                            <td>
-                                <span class="badge badge-pill badge-dark">{{ count($material->files) }}</span>
-                            </td>
-                            <td>
-                                <a href="{{ route('materials.show', $material->id) }}"><i class="fas fa-eye fa-lg"></i></a>
-                            </td>
+                            <th>Course Title &Tilde; Course Code</th>
+                            <th>Lecturer Name</th>
+                            <th>Files</th>
+                            <th></th>
                         </tr>
-                    @endforeach
-                </tbody>
-
-                <caption>
-                    Materials
-                    <span class="badge badge-pill badge-dark">{{ $user->materials->count() }}</span>
-                </caption>
-
-            </table>
+                    </thead>
+    
+                    <tbody>
+                        @foreach ($user->materials as $material)
+                            <tr>
+                                <td>{{ $material->course_title }} &Tilde; {{ $material->course_code }}</td>
+                                <td>{{ $material->lecturer }}</td>
+                                <td>
+                                    <span class="badge badge-pill badge-dark">{{ count($material->files) }}</span>
+                                </td>
+                                <td>
+                                    <a href="{{ route('materials.show', $material) }}"><i class="fas fa-eye fa-lg"></i></a>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+    
+                    <caption>
+                        Materials
+                        <span class="badge badge-pill badge-dark">{{ $user->materials->count() }}</span>
+                    </caption>
+    
+                </table>
+    
+            </div>
 
         </div>
+
 
     @else
         <p class="alert alert-info">

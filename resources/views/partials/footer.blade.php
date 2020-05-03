@@ -1,31 +1,28 @@
-<footer id="footer" class="border-top text-muted p-4 bg-light" 
-        style="background: url({{ asset('img/footer2.png') }}); background-repeat: no-repeat; background-position: center bottom; background-size: auto">
+<footer id="footer" class="border-top" style="background-color: #e2e8f0">
 
-    <div class="container p-4" style="margin-bottom: 300px !important;">
+    <div class="container px-4 py-5">
 
         <div class="row">
 
 
-            <div class="col-lg mb-5">
-                <h1 class="display-4">{{ env('APP_NAME') }}</h1>
+            <div class="col-lg mb-5 mb-lg-0">
+                <h3>{{ env('APP_NAME') }}</h3>
                 <p>Copyright &COPY; {{ now()->year }} <br> kturepo.edu.gh</p>
             </div>
 
 
-            <div class="col-lg mb-5">
+            <div class="col-lg mb-5 mb-lg-0">
 
-                <h5>Site Links</h5>
-                <div class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action bg-light py-2 px-0" href="{{ route('homepage') }}">Homepage</a>
-                    <a class="list-group-item list-group-item-action bg-light py-2 px-0" href="{{ route('papers.index') }}">Past Exam Papers</a>
-                    <a class="list-group-item list-group-item-action bg-light py-2 px-0" href="{{ route('materials.index') }}">Course Materials</a>
-                
-                    <a class="list-group-item list-group-item-action bg-light py-2 px-0" href="{{ route('about.index') }}">About KTU Repo</a>
-                    <a class="list-group-item list-group-item-action bg-light py-2 px-0" href="{{ route('about.developers') }}">About Developers</a>
+                <h5 class="mb-3">Site Links</h5>
+                <div>
+                    <a class="d-block my-2 text-link" href="{{ route('homepage') }}">Homepage</a>
+                    <a class="d-block my-2 text-link" href="{{ route('papers.index') }}">Past Exam Papers</a>
+                    <a class="d-block my-2 text-link" href="{{ route('materials.index') }}">Course Materials</a>
+                    <a class="d-block my-2 text-link" href="{{ route('about') }}">About KTU Repo</a>
                 
                     @guest
-                        <a class="list-group-item list-group-item-action bg-light py-2 px-0" href="{{ route('login.show') }}">Sign in</a>
-                        <a class="list-group-item list-group-item-action bg-light py-2 px-0" href="{{ route('register') }}">Register</a>
+                        <a class="d-block my-2 text-link" href="{{ route('login.show') }}">Sign in</a>
+                        <a class="d-block my-2 text-link" href="{{ route('register') }}">Register</a>
                     @endguest
                 </div>
 
@@ -33,11 +30,11 @@
 
             <div class="col-lg">
                     
-                <h5>More Links</h5>
-                <div class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action bg-light py-2 px-0" href="">KTU Student Info Portal</a>
-                    <a class="list-group-item list-group-item-action bg-light py-2 px-0" href="">KTU Virtual Learning Environment</a>
-                    <a class="list-group-item list-group-item-action bg-light py-2 px-0" href="">KTU Insider</a>
+                <h5 class="mb-3">More Links</h5>
+                <div>
+                    <a class="d-block my-2 text-link" href="">KTU Student Info Portal</a>
+                    <a class="d-block my-2 text-link" href="">KTU Virtual Learning Environment</a>
+                    <a class="d-block my-2 text-link" href="">KTU Insider</a>
                 </div>
 
             </div>
