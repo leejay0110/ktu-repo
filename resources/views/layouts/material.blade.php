@@ -32,7 +32,7 @@
 
         <section id="app-content">
 
-            <div class="container p-4 mt-5">
+            <div class="container p-4">
 
                 <div class="d-flex">
 
@@ -50,7 +50,7 @@
 
             </div>
 
-            <div class="container p-4 mb-5">
+            <div class="container p-4">
                 @yield('content')
             </div>
 

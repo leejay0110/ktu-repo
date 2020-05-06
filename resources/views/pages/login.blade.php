@@ -29,7 +29,7 @@
                 @endif
             </div>
     
-            <button type="submit" class="btn btn-success btn-block">sign in</button>
+            <button type="submit" class="btn btn-success btn-block">Sign in</button>
     
         </form>
 

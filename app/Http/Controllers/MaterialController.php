@@ -12,8 +12,10 @@ class MaterialController extends Controller
 
     public function index()
     {
-        
-        return view('pages.material.index');
+        $materials = Material::latest()->limit(3)->get();
+        return view('pages.material.index', [
+            'materials' => $materials
+        ]);
     }
 
 

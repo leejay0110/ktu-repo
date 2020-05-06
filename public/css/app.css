@@ -1,4 +1,3 @@
-
 html, body {
     background-color: #EDF2F7 !important;
 }
@@ -7,14 +6,12 @@ html, body {
 
 .bg-blue { background-color: #003554 !important }
 .text-blue { color: #003554 !important }
-.text-link { color: #4299e1 !important }
 
 #app {
     min-height: 100vh;
 }
 
-#header, #app-menu, .my-card {
-    background-color: #F0F2F8 !important;
+#app-menu {
     background-color: #FFF !important;
 }
 
@@ -35,7 +32,7 @@ html, body {
 
     #app-menu {
         max-width: 25vw;
-        min-width: 250px;
+        min-width: 300px;
         border-right: 1px solid #dee2e6;
     }
 
@@ -64,6 +61,6 @@ html, body {
 
 }
 
-.rounded-lg {
+/* .rounded-lg {
     border-radius: .5rem !important;
-}
+} */

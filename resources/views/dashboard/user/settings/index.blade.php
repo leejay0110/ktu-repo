@@ -44,9 +44,9 @@
         </dl>
     
         
-        <a href="{{ route('user.settings.edit-details') }}" class="d-block font-weight-bold mb-3">Edit Details</a>
+        <a href="{{ route('user.settings.edit-details') }}" class="d-block mb-3">Edit Details</a>
 
-        <a href="{{ route('user.settings.edit-avatar') }}" class="d-block font-weight-bold">Edit Avatar</a>
+        <a href="{{ route('user.settings.edit-avatar') }}" class="d-block">Edit Avatar</a>
 
     </div>
 

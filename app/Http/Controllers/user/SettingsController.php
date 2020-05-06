@@ -6,6 +6,7 @@ use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 
 class SettingsController extends Controller
@@ -64,8 +65,20 @@ class SettingsController extends Controller
             'avatar' => 'file|image|required'
         ]);
 
+
+        // delete old avatar
+        Storage::delete(Auth::user()->avatar);
+
+
+        // upload new avatar
         $filename = Auth::user()->username . "." . $request->File('avatar')->getClientOriginalExtension();
         $path = $request->File('avatar')->storeAs("public/avatars", $filename);
+
+
+        // resize new avatar
+        $img = Image::make( public_path( "storage/avatars/$filename") )->fit(300, 300);
+        $img->save();
+
         
         $user = Auth::user();
         $user->avatar = $path;

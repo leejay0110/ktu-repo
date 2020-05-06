@@ -1,5 +1,5 @@
 <div class="text-center">
-    <i class="fas fa-users fa-2x"></i> <br>
+    <i class="fas fa-users fa-4x text-blue"></i> <br>
     <h6>Platform Users</h6>
 </div>
 

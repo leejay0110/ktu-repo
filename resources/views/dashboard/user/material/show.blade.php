@@ -39,7 +39,7 @@
     
         </dl>
     
-        <a href="{{ route('user.materials.edit', $material) }}" class="font-weight-bold">Edit Details</a>
+        <a href="{{ route('user.materials.edit', $material) }}">Edit Details</a>
 
     </div>
 

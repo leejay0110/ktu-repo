@@ -18,7 +18,7 @@
 
     <div id="app">
 
-        <div id="app-content" class="p-4 my-5">
+        <div id="app-content" class="p-4">
             <div class="container">
                 @yield('content')
             </div>

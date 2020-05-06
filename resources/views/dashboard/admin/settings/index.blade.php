@@ -42,8 +42,8 @@
     
         </dl>
 
-        <a href="{{ route('admin.settings.edit-details') }}" class="d-block font-weight-bold mb-3">Edit Details</a>
-        <a href="{{ route('admin.settings.edit-password') }}" class="d-block font-weight-bold">Change Password</a>
+        <a href="{{ route('admin.settings.edit-details') }}" class="d-block mb-3">Edit Details</a>
+        <a href="{{ route('admin.settings.edit-password') }}" class="d-block">Change Password</a>
 
     </div>
 

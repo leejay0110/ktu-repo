@@ -39,7 +39,7 @@
     
         </dl>
     
-        <a href="{{ route('user.papers.edit', $paper) }}" class="font-weight-bold">Edit Details</a>
+        <a href="{{ route('user.papers.edit', $paper) }}">Edit Details</a>
 
     </div>
 

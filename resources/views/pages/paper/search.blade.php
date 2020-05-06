@@ -1,6 +1,11 @@
-<h5 class="font-weight-bold text-muted mb-4">
+<h5 class="text-muted mb-4">
+
     Search Results
-    <i class="fas fa-search"></i>
+    <span class="badge badge-pill badge-secondary">
+        <i class="fas fa-search"></i>
+        {{ $papers->count() }}
+    </span>
+
 </h5>
 
 

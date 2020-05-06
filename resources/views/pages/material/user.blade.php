@@ -19,16 +19,14 @@
 @section('content')
 
 
-
     <div class="mb-5">
     
         @if ( $user->avatar )
-            <img src="{{ asset('/storage' . Str::after($user->avatar, 'public')) }}" alt="avatar" class="img-thumbnail rounded-circle" style="width: 7rem">
+            <img src="{{ asset('storage' . Str::after($user->avatar, 'public')) }}" class="img-thumbnail rounded-circle" style="width: 7rem">
         @else
-            <img src="{{ asset('img/default.png') }}" alt="avatar" class="img-thumbnail rounded-circle" style="width: 7rem">
+            <img src="{{ asset('img/default.png') }}" class="img-thumbnail rounded-circle" style="width: 7rem">
         @endif
     </div>
-
 
 
     @if ($user->materials->count() )
@@ -74,15 +72,12 @@
 
         </div>
 
-
     @else
         <p class="alert alert-info">
             <i class="fas fa-exclamation-circle"></i>
             No data found.
         </p>
     @endif
-
-
 
 
 @endsection

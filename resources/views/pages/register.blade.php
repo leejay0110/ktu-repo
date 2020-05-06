@@ -48,7 +48,7 @@
                 @endif
             </div>
     
-            <button type="submit" class="btn btn-success btn-block">submit</button>
+            <button type="submit" class="btn btn-success btn-block">Submit</button>
     
         </form>
 

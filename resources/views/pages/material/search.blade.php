@@ -1,6 +1,11 @@
-<h5 class="font-weight-bold text-muted mb-5">
+<h5 class="text-muted mb-4">
+
     Search Results
-    <i class="fas fa-search"></i>
+    <span class="badge badge-pill badge-secondary">
+        <i class="fas fa-search"></i>
+        {{ $materials->count() }}
+    </span>
+
 </h5>
 
 
@@ -62,15 +67,13 @@
                     
                     <hr>
 
-                    <dl class="row mb-4 text-muted">
+                    <dl class="row text-muted mb-4">
 
                         <dt class="col-lg-3">Lecturer</dt>
                         <dd class="col-lg-9  mb-0">{{ $material->lecturer }}</dd>
 
-                        {{-- <dt class="col-lg-3">Posted at</dt>
-                        <dd class="col-lg-9  mb-0">{{ $material->created_at }}</dd> --}}
 
-                        <dt class="col-lg-3">Attached Files</dt>
+                        <dt class="col-lg-3">Files</dt>
                         <dd class="col-lg-9  mb-0">
                             <span class="badge badge-pill badge-dark">{{ $material->files->count() }}</span>
                         </dd>
@@ -84,8 +87,9 @@
 
                     </dl>                    
                     
-                    <a href="{{ route('materials.show', $material) }}">
-                        <i class="fas fa-eye fa-lg"></i>
+                    <a href="{{ route('materials.show', $material) }}" class="btn btn-primary">
+                        View
+                        <i class="fas fa-eye"></i>
                     </a>
 
                 </div>
