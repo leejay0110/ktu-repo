@@ -37,6 +37,8 @@
 
         <p>Don't have an account? <a href="{{ route('register') }}">Create one.</a></p>
 
+        <p>Forgot your password? <a href="{{ route('password.request') }}">Reset.</a></p>
+
     </div>
 
 @endsection

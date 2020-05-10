@@ -112,13 +112,14 @@ class SettingsController extends Controller
     {
         $request->validate([
             'password_old' => 'required',
-            'password_new' => 'required|min:3'
+            'password' => 'required|min:8|confirmed',
+            'password_confirmation' => 'required'
         ]);
 
         if(Hash::check($request->password_old, Auth::user()->password))
         {
             $user = Auth::user();
-            $user->password = Hash::make($request->password_new);
+            $user->password = Hash::make($request->password);
             $user->save();
 
             return redirect()->back()->with('success', 'Password updated successfully.');

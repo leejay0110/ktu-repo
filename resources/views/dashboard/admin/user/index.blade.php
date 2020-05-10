@@ -26,62 +26,63 @@
         </li>
     </ul>
 
-    <div class="tab-content mt-5" id="myTabContent">
+    <div class="tab-content bg-white border border-top-0 p-4 p-lg-5" id="myTabContent">
         
 
         {{-- all users --}}
         <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
 
-            @if ($users->count())
+            <div class="table-responsive">
 
-                <div class="table-responsive">
+                <table class="table table-striped table-borderless table-hover mb-0">
 
-                    <table class="table table-striped table-borderless table-hover mb-0">
+                    <thead>
+                        <tr>
+                            <th>Name &Tilde; Username</th>
+                            <th>Created</th>
+                            <th>Active</th>
+                        </tr>
+                    </thead>
 
-                        <thead>
+                    <tbody>
+
+                        @forelse ($users as $user)
+
                             <tr>
-                                <th>Name &Tilde; Username</th>
-                                <th>Created</th>
-                                <th>Active</th>
+                                <td>
+                                    {{ $user->name }} &Tilde;
+                                    <a href="{{ route('admin.users.show', $user) }}">{{ $user->username }}</a>
+                                </td>
+                                <td>{{ $user->created_at->isoFormat('LLL') }}</td>
+                                <td>
+                                    @if ($user->isActive())
+                                        <i class="fas fa-check-circle fa-lg text-success"></i>
+                                    @else
+                                        <i class="fas fa-times-circle fa-lg text-danger"></i>
+                                    @endif
+                                </td>
                             </tr>
-                        </thead>
 
-                        <tbody>
-                            @foreach ($users as $user)
-                                <tr>
-                                    <td>
-                                        {{ $user->name }} &Tilde;
-                                        <a href="{{ route('admin.users.show', $user) }}">{{ $user->username }}</a>
-                                    </td>
-                                    <td>{{ $user->created_at->isoFormat('LLL') }}</td>
-                                    <td>
-                                        @if ($user->isActive())
-                                            <i class="fas fa-check-circle fa-lg text-success"></i>
-                                        @else
-                                            <i class="fas fa-times-circle fa-lg text-danger"></i>
-                                        @endif
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
+                        @empty
 
-                        <caption>
-                            Users
-                            <span class="badge badge-pill badge-dark">{{ $users->count() }}</span>
-                        </caption>
+                            <tr>
+                                <td colspan="3">
+                                    <i class="fas fa-info-circle"></i> No data found
+                                </td>
+                            </tr>
+                            
+                        @endforelse
 
-                    </table>
+                    </tbody>
 
-                </div>
+                    <caption>
+                        Users
+                        <span class="badge badge-pill badge-dark">{{ $users->count() }}</span>
+                    </caption>
 
-            @else
+                </table>
 
-                <div class="alert alert-info">
-                    <i class="fas fa-info-circle"></i>
-                    No data found
-                </div>
-
-            @endif
+            </div>
 
         </div>
 
@@ -89,52 +90,49 @@
         {{-- deactivated users --}}
         <div class="tab-pane fade" id="deactivated" role="tabpanel" aria-labelledby="deactivated-tab">
 
-            @if ($deactivated->count())
+            <div class="table-responsive">
 
-                <div class="table-responsive">
+                <table class="table table-striped table-borderless table-hover mb-0">
 
-                    <table class="table table-striped table-borderless table-hover mb-0">
+                    <thead>
+                        <tr>
+                            <th>Name &Tilde; username</th>
+                            <th>Created</th>
+                        </tr>
+                    </thead>
 
-                        <thead>
+                    <tbody>
+
+                        @forelse ($deactivated as $user)
+
                             <tr>
-                                <th>Name &Tilde; username</th>
-                                <th>Created</th>
+                                <td>
+                                    {{ $user->name }} &Tilde;
+                                    <a href="{{ route('admin.users.show', $user) }}">{{ $user->username }}</a>
+                                </td>
+                                <td>{{ $user->created_at->isoFormat('LLL') }}</td>
                             </tr>
-                        </thead>
 
-                        <tbody>
+                        @empty
+                        
+                            <tr>
+                                <td colspan="2">
+                                    <i class="fas fa-info-circle"></i> No data found
+                                </td>
+                            </tr>
 
-                            @foreach ($deactivated as $user)
+                        @endforelse
 
-                                <tr>
-                                    <td>
-                                        {{ $user->name }} &Tilde;
-                                        <a href="{{ route('admin.users.show', $user) }}">{{ $user->username }}</a>
-                                    </td>
-                                    <td>{{ $user->created_at->isoFormat('LLL') }}</td>
-                                </tr>
+                    </tbody>
 
-                            @endforeach
+                    <caption>
+                        Users
+                        <span class="badge badge-pill badge-dark">{{ $deactivated->count() }}</span>
+                    </caption>
 
-                        </tbody>
+                </table>
 
-                        <caption>
-                            Users
-                            <span class="badge badge-pill badge-dark">{{ $deactivated->count() }}</span>
-                        </caption>
-
-                    </table>
-
-                </div>
-
-            @else
-
-                <div class="alert alert-info">
-                    <i class="fas fa-info-circle"></i>
-                    No data found
-                </div>
-
-            @endif
+            </div>
 
         </div>
 

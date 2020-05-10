@@ -108,6 +108,8 @@
 
 @endsection
 
+
+
 @section('scripts')
     
     <script>

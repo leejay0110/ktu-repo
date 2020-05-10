@@ -41,15 +41,28 @@
                 </div>
             </div>
     
+
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label">New Password</label>
                 <div class="col-lg-9">
-                    <input type="password" name="password_new" class="form-control {{ $errors->has('password_new') ? 'border-danger' : '' }}" value="{{ old('password_new') }}" required>
-                    @if ($errors->has('password_new'))
-                    <small class="text-danger">{{ $errors->first('password_new') }}</small>
+                    <input type="password" name="password" class="form-control {{ $errors->has('password') ? 'border-danger' : '' }}" value="{{ old('password') }}" required>
+                    @if ($errors->has('password'))
+                    <small class="text-danger">{{ $errors->first('password') }}</small>
                     @endif
                 </div>
             </div>
+
+            
+            <div class="form-group row">
+                <label class="col-lg-3 col-form-label">Confirm New Password</label>
+                <div class="col-lg-9">
+                    <input type="password" name="password_confirmation" class="form-control {{ $errors->has('password_confirmation') ? 'border-danger' : '' }}" value="{{ old('password_confirmation') }}" required>
+                    @if ($errors->has('password_confirmation'))
+                    <small class="text-danger">{{ $errors->first('password_confirmation') }}</small>
+                    @endif
+                </div>
+            </div>
+
     
             <div class="form-group row">
                 <div class="col-lg-9 offset-lg-3">

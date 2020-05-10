@@ -59,9 +59,9 @@
 
 @else
 
-    <p class="alert alert-info">
+    <div class="bg-white rounded-lg mx-auto shadow-sm p-4 p-lg-5 text-info">
         <i class="fas fa-info-circle"></i>
         No data found.
-    </p>
+    </div>
 
 @endif

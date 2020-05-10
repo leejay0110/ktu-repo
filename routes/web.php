@@ -43,6 +43,18 @@ Route::post('logout', 'LoginController@logout')->name('logout');
 
 
 
+// Password Reset
+
+Route::get('password/request', 'PasswordResetController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'PasswordResetController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', 'PasswordResetController@reset')->name('password.reset');
+
+
+
+
+
+
+
 // Admin Routes
 
 Route::get('admin', 'admin\AdminController@index')->name('admin.index');
