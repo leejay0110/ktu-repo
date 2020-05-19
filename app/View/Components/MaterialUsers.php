@@ -24,7 +24,7 @@ class MaterialUsers extends Component
      */
     public function render()
     {
-        $users = User::where('admin', 0)->orderBy('name')->get();
+        $users = User::select(['id', 'name'])->where('admin', 0)->orderBy('name')->get();
         return view('components.material-users', [
             'users' => $users
         ]);

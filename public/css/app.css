@@ -1,5 +1,5 @@
 html, body {
-    background-color: #EDF2F7 !important;
+    background: linear-gradient(0deg, #FFF, #EDF2F7) !important;
 }
 
 
@@ -7,18 +7,9 @@ html, body {
 .bg-blue { background-color: #003554 !important }
 .text-blue { color: #003554 !important }
 
-#app {
-    min-height: 100vh;
-}
-
-#app-menu {
-    background-color: #FFF !important;
-}
-
-#app-content {
-    flex: 1;
-}
-
+#app { min-height: 150vh; }
+#app-menu { background-color: #FFF !important; }
+#app-content { flex: 1; }
 
 
 
@@ -33,12 +24,11 @@ html, body {
     #app-menu {
         max-width: 25vw;
         min-width: 300px;
-        border-right: 1px solid #dee2e6;
     }
 
     #menu-list {
         padding-right: 16px;
-        max-height: 75vh;
+        max-height: 50vh;
         overflow-y: auto
     }
 
@@ -49,10 +39,6 @@ html, body {
 /* small screens */
 @media (max-width: 991.98px) {
 
-    #app-menu {
-        border-bottom: 1px solid #dee2e6;
-    }
-
     #menu-list {
         max-height: 30vh;
         min-height: 250px;
@@ -60,7 +46,3 @@ html, body {
     }
 
 }
-
-/* .rounded-lg {
-    border-radius: .5rem !important;
-} */

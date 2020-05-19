@@ -19,7 +19,7 @@
 @section('content')
 
 
-    <div class="row bg-white rounded-lg shadow-sm mx-auto p-4 p-lg-5">
+    <div class="row bg-white rounded-lg border mx-auto p-4 p-lg-5">
 
         <div class="col-lg-5">
             <h3>Looking for <br> Course Materials?</h3>
@@ -58,7 +58,7 @@
     @if ( $materials->count() )
 
 
-        <div class="accordian bg-white rounded-lg mx-auto shadow-sm p-4 p-lg-5" id="recentAccordian">
+        <div class="accordian bg-white rounded-lg mx-auto border p-4 p-lg-5" id="recentAccordian">
 
 
             <button class="btn btn-link" data-toggle="collapse" data-target="#recentUploads" aria-expanded="true" aria-controls="recentUploads">

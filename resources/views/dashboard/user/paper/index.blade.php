@@ -19,7 +19,7 @@
 
 
     
-    <div class="bg-white rounded-lg shadow-sm p-4 p-lg-5">
+    <div class="bg-white rounded-lg border p-4 p-lg-5">
         
         @if (Auth::user()->papers->count())
 
@@ -34,6 +34,7 @@
 
                     <thead>
                         <th>Course Title &Tilde; Course Code</th>
+                        <th>Examiner</th>
                         <th>Year - Semester</th>
                         <th>Created</th>
                         <th></th>
@@ -50,6 +51,7 @@
                                         {{ $paper->course_title }} &Tilde; {{ $paper->course_code }}
                                     </a>
                                 </td>
+                                <td>{{ $paper->examiner }}</td>
                                 <td>{{ $paper->year }} - {{ $paper->semester }}</td>
                                 <td>
                                     <span title="{{ $paper->created_at->isoFormat('LLL') }}">

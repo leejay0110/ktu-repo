@@ -67,8 +67,9 @@ class SettingsController extends Controller
 
 
         // delete old avatar
-        Storage::delete(Auth::user()->avatar);
-
+        if ( Auth::user()->avatar ) {
+            Storage::delete(Auth::user()->avatar);
+        }
 
         // upload new avatar
         $filename = Auth::user()->username . "." . $request->File('avatar')->getClientOriginalExtension();

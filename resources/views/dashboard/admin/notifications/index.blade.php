@@ -16,12 +16,7 @@
 
 
 
-
-
-
-<div class="bg-white rounded-lg shadow-sm p-4 p-lg-5 mb-5">
-    
-    @if(Auth::user()->notifications->count())
+@if(Auth::user()->notifications->count())
         
         <div class="mb-5">
         
@@ -40,6 +35,10 @@
         </div>
 
     @endif
+
+
+
+<div class="bg-white rounded-lg border p-4 p-lg-5 mb-5">
 
 
     <div class="table-responsive">

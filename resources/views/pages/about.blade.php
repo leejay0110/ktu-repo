@@ -4,7 +4,7 @@
 @section('content')
     
 
-    <div class="bg-white rounded-lg shadow-sm p-4 p-lg-5 mx-auto mb-4">
+    <div class="bg-white rounded-lg border p-4 p-lg-5 mx-auto mb-4">
         
         <h3>About {{ env('APP_NAME') }}</h3>
 
@@ -23,7 +23,7 @@
     </div>
 
 
-    <div class="bg-white rounded-lg shadow-sm p-4 p-lg-5 mx-auto mb-4">
+    <div class="bg-white rounded-lg border p-4 p-lg-5 mx-auto mb-4">
 
         <h4 class="text-centep-4 r-lg">Why {{ env('APP_NAME') }}?</h4>
 
@@ -58,7 +58,7 @@
     <div class="row row-cols-1 row-cols-lg-2">
 
         <div class="col mb-4">
-            <div class="bg-white rounded shadow-sm text-center p-4 p-lg-5">
+            <div class="bg-white rounded border text-center p-4 p-lg-5">
 
                 <img src="{{ asset('img/developers/lee.jpg')  }}" class="img-thumbnail rounded-circle" style="width: 7rem">
 
@@ -72,7 +72,7 @@
         </div>
 
         <div class="col mb-4">
-            <div class="bg-white rounded shadow-sm text-center p-4 p-lg-5">
+            <div class="bg-white rounded border text-center p-4 p-lg-5">
 
                 <img src="{{ asset('img/developers/thompson.jpg')  }}" class="img-thumbnail rounded-circle" style="width: 7rem">
 
@@ -86,7 +86,7 @@
         </div>
 
         <div class="col mb-4">
-            <div class="bg-white rounded shadow-sm text-center p-4 p-lg-5">
+            <div class="bg-white rounded border text-center p-4 p-lg-5">
 
                 <img src="{{ asset('img/developers/frimpong.jpg')  }}" class="img-thumbnail rounded-circle" style="width: 7rem">
 
@@ -100,7 +100,7 @@
         </div>
 
         <div class="col mb-4">
-            <div class="bg-white rounded shadow-sm text-center p-4 p-lg-5">
+            <div class="bg-white rounded border text-center p-4 p-lg-5">
 
                 <img src="{{ asset('img/developers/gadzo.jpg')  }}" class="img-thumbnail rounded-circle" style="width: 7rem">
 

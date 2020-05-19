@@ -60,7 +60,7 @@
 
             <div class="col mb-4">
 
-                <div class="bg-white rounded-lg shadow-sm p-4 p-lg-5">
+                <div class="bg-white rounded-lg border p-4 p-lg-5">
                     
                     <h5 class="mb-0">{{ $material->course_title }}</h5>
                     <small class="text-muted">{{ $material->course_code }}</small>

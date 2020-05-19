@@ -2,9 +2,9 @@
 
 @section('content')
     
-    <div class="mx-auto" style="max-width: 24rem">
+    <div class="mx-auto bg-white  rounded-lg border p-4 p-lg-5" style="max-width: 24rem">
 
-        <h1>Reset Password</h1>
+        <h2>Reset Password</h2>
         <p>Please enter your account email address and a new password.</p>
 
         <br>

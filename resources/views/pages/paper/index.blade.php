@@ -3,7 +3,7 @@
 @section('content')
     
 
-    <div class="row bg-white rounded-lg mx-auto shadow-sm p-4 p-lg-5">
+    <div class="row bg-white rounded-lg mx-auto border p-4 p-lg-5">
     
         <div class="col-lg-5">
             <h3>Looking for <br> Past Exam Papers?</h3>
@@ -43,7 +43,7 @@
     @if ( $papers->count() )
 
 
-        <div class="accordian bg-white rounded-lg mx-auto shadow-sm p-4 p-lg-5" id="recentAccordian">
+        <div class="accordian bg-white rounded-lg mx-auto border p-4 p-lg-5" id="recentAccordian">
 
 
             <button class="btn btn-link" data-toggle="collapse" data-target="#recentUploads" aria-expanded="true" aria-controls="recentUploads">

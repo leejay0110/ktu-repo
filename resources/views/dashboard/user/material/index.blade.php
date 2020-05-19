@@ -15,7 +15,7 @@
 
     <a href="{{ route('user.materials.create') }}" class="btn btn-success mb-5">Add Course Materials</a>
 
-    <div class="bg-white rounded-lg shadow-sm p-4 p-lg-5">
+    <div class="bg-white rounded-lg border p-4 p-lg-5">
 
         @if (count(Auth::user()->materials))
     

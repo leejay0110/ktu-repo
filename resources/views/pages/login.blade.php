@@ -2,9 +2,9 @@
 
 @section('content')
     
-    <div class="mx-auto" style="max-width: 24rem">
+    <div class="mx-auto bg-white  rounded-lg border p-4 p-lg-5" style="max-width: 24rem">
 
-        <h1>Sign in</h1>
+        <h2>Sign in</h2>
         <p>Please enter your login details.</p>
 
         <br>

@@ -5,6 +5,8 @@ You are receiving this email because we received a password reset request for yo
 
 Click on the reset button to set your password to: **pass1234**
 
+Please ensure you change the password after the reset.
+
 @component('mail::button', ['url' => $url ] )
 Reset Password
 @endcomponent

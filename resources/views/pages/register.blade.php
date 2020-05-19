@@ -4,10 +4,10 @@
 
 @section('content')
 
-    <div class="mx-auto" style="max-width: 24rem">
+    <div class="mx-auto bg-white  rounded-lg border p-4 p-lg-5" style="max-width: 24rem">
 
 
-        <h1>Register</h1>
+        <h2>Register</h2>
         <p>Please provide the required information for your account creation.</p>
 
         <br>

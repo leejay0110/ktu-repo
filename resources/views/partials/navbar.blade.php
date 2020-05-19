@@ -15,18 +15,6 @@
                 <a class="nav-item nav-link {{ Route::is('papers.index') ? 'active' : '' }}" href="{{ route('papers.index') }}">Past Exam Papers</a>
                 <a class="nav-item nav-link {{ Route::is('materials.*') ? 'active' : '' }}" href="{{ route('materials.index') }}">Course Materials</a>
                 <a class="nav-item nav-link {{ Route::is('about') ? 'active' : '' }}" href="{{ route('about') }}">About</a>
-
-
-                {{-- <li class="nav-item dropdown">
-                    
-                    <a class="nav-link {{ Route::is('about.*') ? 'active' : '' }} dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
-
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('about.index') }}">About KTU Repo</a>
-                        <a class="dropdown-item" href="{{ route('about.developers') }}">Developers</a>
-                    </div>
-                </li> --}}
-                
             </div>
             
 

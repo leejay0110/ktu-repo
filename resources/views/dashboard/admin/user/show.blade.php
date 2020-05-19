@@ -21,7 +21,7 @@
     
     
 
-    <div class="bg-white rounded-lg shadow-sm p-4 p-lg-5 mb-5">
+    <div class="bg-white rounded-lg border p-4 p-lg-5 mb-5">
 
         <h1>{{ $user->name }}</h1>
     
@@ -74,7 +74,7 @@
     </div>
 
 
-    <div class="bg-white rounded-lg shadow-sm p-4 p-lg-5 mb-5">
+    <div class="bg-white rounded-lg border p-4 p-lg-5 mb-5">
     
 
         <h3>Past Exam Papers &amp; Course Materials</h3>
