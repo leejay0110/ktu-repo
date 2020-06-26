@@ -23,13 +23,13 @@
             <form class="d-inline" action="{{ route('notifications.mark-all-as-read') }}" method="post">
                 @csrf
                 @method('put')
-                <button type="submit" class="btn btn-secondary d-block d-lg-inline mb-3 mb-lg-0">Mark all as read</button>
+                <button type="submit" class="btn btn-blue d-block d-lg-inline mb-3 mb-lg-0">Mark all as read</button>
             </form>
         
             <form class="d-inline" action="{{ route('notifications.delete') }}" method="post">
                 @csrf
                 @method('delete')
-                <button type="submit" class="btn btn-secondary">Delete all notifications</button>
+                <button type="submit" class="btn btn-blue">Delete all notifications</button>
             </form>
         
         </div>
@@ -38,7 +38,7 @@
 
 
 
-<div class="bg-white rounded-lg border p-4 p-lg-5 mb-5">
+<div class="bg-white rounded border p-4 p-lg-5 mb-5">
 
 
     <div class="table-responsive">

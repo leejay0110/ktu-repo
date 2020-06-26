@@ -22,9 +22,9 @@
 @section('content')
     
     
-    <div class="bg-white rounded-lg border p-4 p-lg-5 mb-5">
+    <div class="bg-white rounded border p-4 p-lg-5 mb-4">
 
-        <h3>{{ $material->course_title }}</h3>
+        <h4>{{ $material->course_title }}</h4>
 
         <p class="text-muted">{{ $material->course_code }}</p>
     
@@ -51,13 +51,11 @@
 
 
 
-    <div class="mb-5">
-
-
+    <div class="mb-4">
         
-        <div class="bg-white rounded-lg border p-4 p-lg-5">
+        <div class="bg-white rounded border p-4 p-lg-5">
             
-            <h4 class="mb-3">Attached Files</h4>
+            <h5 class="mb-3">Attached Files</h5>
 
             <hr>
 

@@ -24,16 +24,14 @@
 
 
         <section id="app-menu">
-            <div class="container p-4">
-                <x-admin-menu/>
-            </div>
+            <x-admin-menu/>
         </section>
 
 
 
         <section id="app-content">
 
-            <div class="container p-4">
+            <div class="container my-4">
 
                 <div class="d-flex">
 
@@ -51,7 +49,7 @@
 
             </div>
 
-            <div class="container p-4">
+            <div class="container my-4">
                 @yield('content')
             </div>
 
@@ -65,6 +63,7 @@
     <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    @yield('script')
 
 
 </body>

@@ -1,10 +1,36 @@
-html, body {
-    background: linear-gradient(0deg, #FFF, #EDF2F7) !important;
+@font-face {
+    font-family: Bellota;
+    src: url('../fonts/Bellota-Regular.ttf');
 }
 
 
+html, body {
+    /* background: linear-gradient(0deg, #FAFAFA, #EDF2F7) !important; */
+    /* background-color: #EDF2F7; */
+    background-color: #F7FAFC;
+    font-size: .975rem;
+}
+
+
+.btn-blue {
+    background-color: #003554 !important;
+    color: white
+}
+
+.btn-dark-blue {
+    background-color: #012c46 !important;
+    color: white !important;
+}
+
+.btn-green {
+    background-color: #0e5400 !important;
+    color: white
+}
 
 .bg-blue { background-color: #003554 !important }
+.bg-gray {
+    background-color: #6c757d79;
+}
 .text-blue { color: #003554 !important }
 
 #app { min-height: 150vh; }
@@ -22,13 +48,14 @@ html, body {
     }
 
     #app-menu {
-        max-width: 25vw;
-        min-width: 300px;
+        max-width: 20vw;
+        min-width: 350px;
+        border-right: 1px solid #dee2e6;
     }
 
     #menu-list {
         padding-right: 16px;
-        max-height: 50vh;
+        max-height: 100vh;
         overflow-y: auto
     }
 
@@ -39,6 +66,11 @@ html, body {
 /* small screens */
 @media (max-width: 991.98px) {
 
+    #app-menu {
+        border-bottom: 1px solid #dee2e6;
+        display: none;
+    }
+
     #menu-list {
         max-height: 30vh;
         min-height: 250px;
@@ -46,3 +78,8 @@ html, body {
     }
 
 }
+
+
+/* .container {
+    max-width: 960px !important;
+} */

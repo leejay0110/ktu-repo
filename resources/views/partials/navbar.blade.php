@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-blue">
 
-    <div class="container-fluid">
+    <div class="container">
 
         <a href="{{ route('homepage') }}" class="navbar-brand mb-0 h1">{{ env('APP_NAME') }}</a>
 
@@ -12,7 +12,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 
             <div class="navbar-nav mr-auto">
-                <a class="nav-item nav-link {{ Route::is('papers.index') ? 'active' : '' }}" href="{{ route('papers.index') }}">Past Exam Papers</a>
+                <a class="nav-item nav-link {{ Route::is('papers.index') ? 'active' : '' }}" href="{{ route('papers.index') }}">Past Examination Papers</a>
                 <a class="nav-item nav-link {{ Route::is('materials.*') ? 'active' : '' }}" href="{{ route('materials.index') }}">Course Materials</a>
                 <a class="nav-item nav-link {{ Route::is('about') ? 'active' : '' }}" href="{{ route('about') }}">About</a>
             </div>
@@ -60,7 +60,7 @@
 
                 <div class="dropdown">
 
-                    <button class="btn text-white dropdown-toggle" type="button" id="appDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-dark-blue dropdown-toggle" type="button" id="appDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-user-circle"></i>
                         {{ Auth::user()->username }}
                     </button>
@@ -74,8 +74,9 @@
                         @endif
 
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="post" style="display: none">
                             @csrf

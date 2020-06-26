@@ -13,9 +13,12 @@
 
 @section('content')
 
-    <a href="{{ route('user.materials.create') }}" class="btn btn-success mb-5">Add Course Materials</a>
+    <a href="{{ route('user.materials.create') }}" class="btn btn-blue mb-5">
+        <i class="fas fa-plus-circle"></i>
+        Add Course Materials
+    </a>
 
-    <div class="bg-white rounded-lg border p-4 p-lg-5">
+    <div class="bg-white rounded border p-4 p-lg-5">
 
         @if (count(Auth::user()->materials))
     

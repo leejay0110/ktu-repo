@@ -19,11 +19,9 @@ class UserController extends Controller
     {
 
         $users = User::where('admin', 0)->orderBy('active', 'desc')->orderBy('name')->get();
-        $deactivated = User::where('admin', 0)->where('active', 0)->orderBy('name')->get();
 
         return view('dashboard.admin.user.index', [
-            'users' => $users,
-            'deactivated' => $deactivated
+            'users' => $users
         ]);
         
     }

@@ -17,20 +17,15 @@
 @section('content')
     
 
-    <div class="bg-white rounded-lg border p-4 p-lg-5 mb-5">
+    <div class="bg-white rounded border p-4 p-lg-5 mb-5">
 
 
         <h3>{{ Auth::user()->name }}</h3>
+        <p class="text-muted">{{ Auth::user()->username }}</p>
     
         <hr>
     
         <dl class="row">
-    
-            <dt class="col-lg-3">Username</dt>
-            <dd class="col-lg-9">{{ Auth::user()->username }}</dd>
-    
-            <dt class="col-lg-3">Name</dt>
-            <dd class="col-lg-9">{{ Auth::user()->name }}</dd>
     
             <dt class="col-lg-3">Email</dt>
             <dd class="col-lg-9">{{ Auth::user()->email }}</dd>

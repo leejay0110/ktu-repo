@@ -16,39 +16,47 @@
 <body>
 
     
+    
     @include('partials.navbar')
     @include('partials.errors')
+    
 
     <div id="app">
 
 
         <section id="app-menu">
-            <div class="container p-4">
-                <x-material-users/>
-            </div>
+            <x-material-users/>
         </section>
 
 
 
         <section id="app-content">
 
-            <div class="container p-4">
 
-                <div class="d-flex">
+            <div class="jumbotron jumbotron-fluid border-bottom bg-white px-4 px-lg-5 py-5 mb-0">
 
-                    <div class="mr-4">
-                        <button class="btn bg-blue text-white" id="menu-toggle" style="padding: 11px 16px; font-size: 1rem">
-                            <i class="fas fa-bars"></i>
-                        </button>
+                <div class="container">
+    
+                    <div class="d-flex">
+    
+                        <div class="mr-4">
+                            <button class="btn bg-blue text-white" id="menu-toggle" style="padding: 11px 16px; font-size: 1rem">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                        </div>
+    
+                        <div class="flex-fill">
+                            @yield('nav')
+                        </div>
+    
                     </div>
-
-                    <div class="flex-fill">
-                        @yield('nav')
-                    </div>
+    
+                    @yield('header')
 
                 </div>
 
             </div>
+
 
             <div class="container p-4">
                 @yield('content')

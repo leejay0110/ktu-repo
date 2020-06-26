@@ -15,11 +15,14 @@
 
 
 
-    <a href="{{ route('user.papers.create') }}" class="btn btn-success mb-5">Add Past Exam Paper</a>
+    <a href="{{ route('user.papers.create') }}" class="btn btn-blue mb-5">
+        <i class="fas fa-plus-circle"></i>
+        Add Past Examination Paper
+    </a>
 
 
     
-    <div class="bg-white rounded-lg border p-4 p-lg-5">
+    <div class="bg-white rounded border p-4 p-lg-5">
         
         @if (Auth::user()->papers->count())
 

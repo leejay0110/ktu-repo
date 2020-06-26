@@ -29,7 +29,7 @@ class PaperController extends Controller
         $papers = Paper::where('course_title', 'like', '%' . $request['query'] . '%')
             ->orwhere('course_code', 'like', '%' . $request['query'] . '%')
             ->orwhere('examiner', 'like', '%' . $request['query'] . '%')
-            ->limit(10)->get();
+            ->limit(20)->get();
 
         return view('pages.paper.search', [
             'papers' => $papers

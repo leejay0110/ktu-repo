@@ -16,7 +16,7 @@
 
 @section('content')
 
-    <div class="bg-white rounded-lg border p-4 p-lg-5 mb-5">
+    <div class="bg-white rounded border p-4 p-lg-5 mb-5">
         
         <h3>{{ $material->course_title }}</h3>
         <p class="text-muted">{{ $material->course_code }}</p>
@@ -45,7 +45,7 @@
 
 
 
-    <div class="bg-white rounded-lg border p-4 p-lg-5 mb-5">
+    <div class="bg-white rounded border p-4 p-lg-5 mb-5">
 
         <h5>Add Files</h5>
 
@@ -75,9 +75,12 @@
 
 
     
-    <div class="bg-white rounded-lg border p-4 p-lg-5 mb-5">
+    <div class="bg-white rounded border p-4 p-lg-5 mb-5">
         
-        <h5>Attached Files</h5>
+        <h5>
+            Attached Files
+            <span class="badge badge-pill badge-dark">{{ $material->files->count() }}</span>
+        </h5>
 
         <hr>
 

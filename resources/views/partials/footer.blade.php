@@ -1,4 +1,5 @@
-<footer id="footer" class="" style="background-color: #F5F5FA">
+{{-- <footer id="footer" class="border-top" style="background-color: #F5F5FA"> --}}
+<footer id="footer" class="bg-dark text-white">
 
     <div class="container px-4 py-5">
 
@@ -16,9 +17,9 @@
                 <h5 class="mb-3">Site Links</h5>
                 <div>
                     <a class="d-block my-2" href="{{ route('homepage') }}">Homepage</a>
-                    <a class="d-block my-2" href="{{ route('papers.index') }}">Past Exam Papers</a>
+                    <a class="d-block my-2" href="{{ route('papers.index') }}">Past Examination Papers</a>
                     <a class="d-block my-2" href="{{ route('materials.index') }}">Course Materials</a>
-                    <a class="d-block my-2" href="{{ route('about') }}">About KTU Repo</a>
+                    <a class="d-block my-2" href="{{ route('about') }}">About</a>
                 
                     @guest
                         <a class="d-block my-2" href="{{ route('login.show') }}">Sign in</a>

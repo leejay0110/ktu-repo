@@ -20,7 +20,7 @@
 @section('content')
 
 
-    <div class="bg-white rounded-lg border p-4 p-lg-5">
+    <div class="bg-white rounded border p-4 p-lg-5">
 
         <h3>Edit Details</h3>
     

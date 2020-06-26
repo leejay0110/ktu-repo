@@ -19,19 +19,21 @@
 @section('content')
 
 
-    <div class="mb-5">
+    <div class="mb-5 text-center">
     
         @if ( $user->avatar )
             <img src="{{ asset('storage' . Str::after($user->avatar, 'public')) }}" class="img-thumbnail rounded-circle" style="width: 7rem">
         @else
             <img src="{{ asset('img/default.png') }}" class="img-thumbnail rounded-circle" style="width: 7rem">
         @endif
+
+        <h5>{{ $user->name }}</h5>
     </div>
 
 
     @if ($user->materials->count() )
 
-        <div class="bg-white rounded-lg border p-4 p-lg-5 mb-5">
+        <div class="bg-white rounded border p-4 p-lg-5 mb-5">
 
             <div class="table-responsive">
                 

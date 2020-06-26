@@ -16,6 +16,8 @@
     @include('partials.navbar')
     @include('partials.errors')
 
+    @yield('header')
+
     <div id="app">
 
         <div id="app-content" class="p-4">

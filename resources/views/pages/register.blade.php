@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <div class="mx-auto bg-white  rounded-lg border p-4 p-lg-5" style="max-width: 24rem">
+    <div class="mx-auto bg-white  rounded border p-4 p-lg-5" style="max-width: 24rem">
 
 
         <h2>Register</h2>
