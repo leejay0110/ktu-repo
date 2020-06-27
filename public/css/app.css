@@ -14,7 +14,7 @@ html, body {
 
 .btn-blue {
     background-color: #003554 !important;
-    color: white
+    color: white !important
 }
 
 .btn-dark-blue {
@@ -29,7 +29,8 @@ html, body {
 
 .bg-blue { background-color: #003554 !important }
 .bg-gray {
-    background-color: #6c757d79;
+    background-color: #E9ECEF;
+    background-color: #F7F7F7;
 }
 .text-blue { color: #003554 !important }
 
@@ -54,8 +55,8 @@ html, body {
     }
 
     #menu-list {
-        padding-right: 16px;
-        max-height: 100vh;
+        /* padding-right: 16px; */
+        max-height: 75vh;
         overflow-y: auto
     }
 

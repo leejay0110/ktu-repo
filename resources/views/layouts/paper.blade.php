@@ -25,7 +25,7 @@
 
 
         <section id="app-menu">
-            <x-material-users/>
+            <x-recent-paper/>
         </section>
 
 
@@ -37,7 +37,7 @@
 
                 <div class="container">
     
-                    <div class="d-flex">
+                    <div class="d-flex mb-4">
     
                         <div class="mr-4">
                             <button class="btn bg-blue text-white" id="menu-toggle" style="padding: 11px 16px; font-size: 1rem">
@@ -46,7 +46,13 @@
                         </div>
     
                         <div class="flex-fill">
-                            @yield('nav')
+                            
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item active" aria-current="page">Past Examination Papers</li>
+                                </ol>
+                            </nav>
+
                         </div>
     
                     </div>

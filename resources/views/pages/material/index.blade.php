@@ -55,7 +55,7 @@
 
     <div id="material-results"></div>
 
-    @if ( $materials->count() )
+    {{-- @if ( $materials->count() )
 
         <div class="card accordion" id="recentUploadsAccordian" >
 
@@ -111,7 +111,7 @@
 
         </div>
 
-    @endif
+    @endif --}}
 
 @endsection
 

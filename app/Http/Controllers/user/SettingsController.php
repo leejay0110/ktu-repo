@@ -21,9 +21,9 @@ class SettingsController extends Controller
 
 
 
-    function index()
+    function details()
     {
-        return view('dashboard.user.settings.index');
+        return view('dashboard.user.settings.details');
     }
 
 
@@ -48,7 +48,7 @@ class SettingsController extends Controller
         $user->email = $request->email;
         $user->save();
 
-        return redirect()->route('user.settings')->with('success', 'Details updated successfully.');
+        return redirect()->back()->with('success', 'Details updated successfully.');
         
     }
 

@@ -3,7 +3,7 @@
 
 @section('header')
     
-    <div class="jumbotron jumbotron-fluid bg-white border-bottom px-4 px-lg-5 py-5 mb-0">
+    <div class="jumbotron jumbotron-fluid bg-white border-bottom p-4 mb-0">
 
         <div class="container">
 
@@ -26,56 +26,35 @@
 
 
 @section('content')
-    
-
-    {{-- <div class="bg-white rounded border p-4 p-lg-5 mx-auto mb-4">
-        
-        <h4 class="text-center">About {{ env('APP_NAME') }}</h4>
-
-        <hr>
-
-        <p>
-            {{ env('APP_NAME') }} is the institutional repository of Koforidua Technical University.
-            {{ env('APP_NAME') }} is an open-access electronic archive developed for the collection, preservation and distribution of digital materials or resources.
-        </p>
-
-        <p class="mb-0">
-            The platform was built as a final year project work by four students from the computer science department;
-            three networking students and one computer science student.
-        </p>
-
-    </div> --}}
-
 
     <div class="bg-white rounded border p-4 p-lg-5 mx-auto mb-4">
 
-        <h4>Why {{ env('APP_NAME') }}?</h4>
+        <h4 class="text-center">Why {{ env('APP_NAME') }}?</h4>
 
         <br>
 
-        <dl class="row mb-0">
+        <dl>
 
-            <dt class="col-lg-3">Efficient Distribution</dt>
-            <dd class="col-lg-9">
+            <dt>Efficient Distribution</dt>
+            <dd>
                 <p>One reason why we developed this platform was to help make distribution of resources an easier process. With this platform, lecturers or course representatives can easily upload course materials unto the platform without any difficulties.</p>
             </dd>
 
-            <dt class="col-lg-3">Easy Access</dt>
-            <dd class="col-lg-9">
+            <dt>Easy Access</dt>
+            <dd>
                 <p>Easy access is anthoer resaon for developing this platform. Users which in most cases are students can access course materials on the platform without any limitation. The platform is an open-access platform; students can download course materials without the need for creating an account.</p>
                 
                 <p>Also, the platform provides a section for downloading past examination papers which is very important to students especially when preparing for exminations. Students can download pdf copies of past examination papers so far as they have been uploaded unto the platform by any user.</p>
             </dd>
-            <dt class="col-lg-3">Online Repository</dt>
-            <dd class="col-lg-9">
+
+            <dt>Online Repository</dt>
+            <dd>
                 <p>Another reason why this platform was developed was to create an online repository for the university at large. We wanted to help create an archive of digital resources for the university; a single point where people will seek when looking for digital resources like course materils and past examination papers</p>
             </dd>
 
         </dl>
 
     </div>
-
-    
 
     
     <div class="bg-white border rounded p-4 p-lg-5">
@@ -145,7 +124,5 @@
         </div>
 
     </div>
-
-
 
 @endsection

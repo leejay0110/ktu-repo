@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.user')
 
 
 
@@ -6,7 +6,7 @@
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">Settings</li>
+            <li class="breadcrumb-item active" aria-current="page">User Details</li>
         </ol>
     </nav>
 
@@ -17,19 +17,15 @@
 @section('content')
     
 
-    <div class="bg-white rounded border p-4 p-lg-5">
+    <div class="bg-white rounded border p-4 p-lg-5 mb-5">
+
 
         <h3>{{ Auth::user()->name }}</h3>
+        <p class="text-muted">{{ Auth::user()->username }}</p>
     
         <hr>
     
-        <dl class="row mb-5">
-    
-            <dt class="col-lg-3">Username</dt>
-            <dd class="col-lg-9">{{ Auth::user()->username }}</dd>
-    
-            <dt class="col-lg-3">Name</dt>
-            <dd class="col-lg-9">{{ Auth::user()->name }}</dd>
+        <dl class="row">
     
             <dt class="col-lg-3">Email</dt>
             <dd class="col-lg-9">{{ Auth::user()->email }}</dd>
@@ -41,12 +37,11 @@
             <dd class="col-lg-9">{{ Auth::user()->updated_at->isoFormat('LLL') }}</dd>
     
         </dl>
-
-        <a href="{{ route('admin.settings.edit-details') }}" class="d-block mb-3">Edit Details</a>
-        <a href="{{ route('admin.settings.edit-password') }}" class="d-block">Change Password</a>
+    
+        
+        <a href="{{ route('user.settings.edit-details') }}" class="d-block">Edit Details</a>
 
     </div>
-
 
 
 @endsection

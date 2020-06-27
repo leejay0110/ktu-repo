@@ -78,7 +78,7 @@ Route::delete('admin/notifications/delete', 'admin\NotificationController@delete
 
 
 
-Route::get('admin/settings', 'admin\SettingsController@index')->name('admin.settings');
+Route::get('admin/settings/details', 'admin\SettingsController@details')->name('admin.settings.details');
 Route::get('admin/settings/edit-details', 'admin\SettingsController@editDetails')->name('admin.settings.edit-details');
 Route::get('admin/settings/edit-password', 'admin\SettingsController@editPassword')->name('admin.settings.edit-password');
 Route::put('admin/settings/edit-details', 'admin\SettingsController@updateDetails')->name('admin.settings.update-details');
@@ -94,7 +94,7 @@ Route::put('admin/settings/edit-password', 'admin\SettingsController@updatePassw
 Route::get('user', 'user\UserController@index')->name('user.index');
 
 
-Route::get('user/settings', 'user\SettingsController@index')->name('user.settings');
+Route::get('user/settings/details', 'user\SettingsController@details')->name('user.settings.details');
 Route::get('user/settings/edit-details', 'user\SettingsController@editDetails')->name('user.settings.edit-details');
 Route::get('user/settings/edit-avatar', 'user\SettingsController@editAvatar')->name('user.settings.edit-avatar');
 Route::get('user/settings/edit-password', 'user\SettingsController@editPassword')->name('user.settings.edit-password');

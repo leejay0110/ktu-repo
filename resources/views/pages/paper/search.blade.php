@@ -61,7 +61,7 @@
 
                         </dl>                    
                         
-                        <a href="{{ route('papers.download', $paper) }}" class="btn btn-green">
+                        <a href="{{ route('papers.download', $paper) }}" class="btn btn-block btn-green">
                             Download
                             <i class="fas fa-download"></i>
                         </a>

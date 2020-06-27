@@ -13,9 +13,9 @@
 
 @section('content')
 
-    <div class="d-flex">
+    <div class="row row-cols-2 row-cols-xl-3">
 
-        <div class="mr-5">
+        <div class="col mb-4">
 
             <div class="text-center bg-white rounded border p-4 p-lg-5 mb-4">
                 <h1 class="display-4 mb-0">{{ Auth::user()->papers->count() }}</h1>
@@ -29,7 +29,7 @@
 
         </div>
 
-        <div>
+        <div class="col mb-4">
 
             <div class="text-center bg-white rounded border p-4 p-lg-5 mb-4">
                 <h1 class="display-4 mb-0">{{ Auth::user()->materials->count() }}</h1>

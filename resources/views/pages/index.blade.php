@@ -3,7 +3,7 @@
 
 @section('header')
     
-    <div class="jumbotron jumbotron-fluid bg-white border-bottom px-4 px-lg-5 py-5 mb-0">
+    <div class="jumbotron jumbotron-fluid bg-white border-bottom p-4 mb-0">
 
         <div class="container">
 

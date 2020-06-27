@@ -7,7 +7,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item" aria-current="page">
-                <a href="{{ route('admin.settings') }}">Profile</a>
+                <a href="{{ route('admin.settings.details') }}">Details</a>
             </li>
             <li class="breadcrumb-item active" aria-current="page">Edit Details</li>
         </ol>

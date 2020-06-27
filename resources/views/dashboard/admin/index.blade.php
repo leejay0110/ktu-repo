@@ -13,27 +13,32 @@
 
 @section('content')
 
-    <div class="card" style="max-width: 24rem !important">
+    <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
 
-        <div class="card-body p-4 p-lg-5">
-
+        <div class="col mb-4">
             
-            <div class="text-center">
-                <h1 class="display-4 mb-0">{{ $users }}</h1>
-                <p>{{ $users == 1 ? 'User' : 'Users' }}</p>
+            
+            <div class="bg-white rounded border p-4 p-lg-5 mb-4">
+    
+                
+                <div class="text-center">
+                    <h1 class="display-4 mb-0">{{ $users }}</h1>
+                    <p>{{ $users == 1 ? 'User' : 'Users' }}</p>
+                </div>
+    
+                <hr>
+    
+                <p>
+                    Activate users
+                    <span class="badge badge-pill badge-success">{{ $users - $deactivated }}</span>
+                </p>
+    
+                <p>
+                    Deactivated users
+                    <span class="badge badge-pill badge-danger">{{ $deactivated }}</span>
+                </p>
+    
             </div>
-
-            <hr>
-
-            <p>
-                Activate users
-                <span class="badge badge-pill badge-success">{{ $users - $deactivated }}</span>
-            </p>
-
-            <p>
-                Deactivated users
-                <span class="badge badge-pill badge-danger">{{ $deactivated }}</span>
-            </p>
 
         </div>
 
