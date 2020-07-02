@@ -53,12 +53,10 @@
 
         <div class="">
 
-            <h6 class="mb-0">
-                <a class="d-block p-3 bg-gray" data-toggle="collapse" data-target="#users-collapse" aria-expanded="true" aria-controls="users-collapse">
-                    <i class="fas fa-users"></i>
-                    Platform Users
-                </a>
-            </h6>
+            <a class="d-block p-3 bg-gray" data-toggle="collapse" data-target="#users-collapse" aria-expanded="true" aria-controls="users-collapse">
+                <i class="fas fa-users"></i>
+                Platform Users
+            </a>
                             
             <div id="users-collapse" class="collapse show border-top""  data-parent="#menu-accordian">
                     
@@ -87,12 +85,10 @@
 
         <div class="border-top">
 
-            <h6 class="mb-0">
-                <a class="d-block p-3 bg-gray" data-toggle="collapse" data-target="#recent-materials-collapse" aria-expanded="true" aria-controls="recent-materials-collapse">
-                    <i class="fas fa-book"></i>
-                    Recently Uploaded Course Materials
-                </a>
-            </h6>
+            <a class="d-block p-3 bg-gray" data-toggle="collapse" data-target="#recent-materials-collapse" aria-expanded="true" aria-controls="recent-materials-collapse">
+                <i class="fas fa-clock"></i>
+                Recently Uploaded
+            </a>
 
             <div id="recent-materials-collapse" class="collapse border-top" data-parent="#menu-accordian">
 

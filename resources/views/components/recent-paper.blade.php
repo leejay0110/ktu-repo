@@ -3,13 +3,9 @@
 
     <div class="card">
 
-        <div class="card-header">
-            
-            <h6 class="mb-0">
-                <i class="fas fa-clock"></i>
-                Recently Uploaded Past Exam Papers
-            </h6>
-
+        <div class="card-header">            
+            <i class="fas fa-clock"></i>
+            Recently Uploaded
         </div>
     
         @if ( $papers->count() )
