@@ -4,7 +4,7 @@
 @section('nav')
 
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
+        <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item" aria-current="page">
                 <a href="{{ route('materials.index') }}">Course Materials</a>
             </li>
@@ -22,7 +22,7 @@
 @section('content')
     
     
-    <div class="bg-white rounded border p-4 p-lg-5 mb-4">
+    <div class="bg-white rounded border shadow-sm p-4 mb-4">
 
         <h4>{{ $material->course_title }}</h4>
 
@@ -53,7 +53,7 @@
 
     <div class="mb-4">
         
-        <div class="bg-white rounded border p-4 p-lg-5">
+        <div class="bg-white rounded border shadow-sm p-4">
             
             <h5 class="mb-3">Attached Files</h5>
 

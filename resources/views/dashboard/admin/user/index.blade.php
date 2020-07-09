@@ -10,7 +10,7 @@
 @section('nav')
     
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
+        <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item active" aria-current="page">Users</li>
         </ol>
     </nav>
@@ -26,7 +26,7 @@
 
         <h5 class="card-header">Users</h5>
 
-        <div class="card-body p-4 p-lg-5">
+        <div class="card-body p-4">
 
             <div class="table-responsive">
     

@@ -1,9 +1,8 @@
-<div class="mb-5">
+<div class="mb-4">
 
     <h5 class="mb-4">
         Search Results
         <span class="badge badge-pill badge-dark">
-            <i class="fas fa-search"></i>
             {{ $materials->count() }}
         </span>
     </h5>
@@ -17,7 +16,7 @@
 
                 <div class="col mb-4">
 
-                    <div class="bg-white rounded border p-4 p-lg-5">
+                    <div class="bg-white rounded border shadow-sm p-4">
                         
                         <h5 class="mb-0">{{ $material->course_title }}</h5>
                         <small class="text-muted">{{ $material->course_code }}</small>

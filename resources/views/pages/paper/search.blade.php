@@ -1,9 +1,8 @@
-<div class="mb-5">
+<div class="mb-4">
 
     <h5 class="mb-4">
         Search Results
         <span class="badge badge-pill badge-dark">
-            <i class="fas fa-search"></i>
             {{ $papers->count() }}
         </span>
     </h5>
@@ -16,18 +15,7 @@
 
                 <div class="col mb-4">
 
-                    <div class="bg-white rounded border p-4 p-lg-5">
-
-
-                        {{-- <div class="row">
-                            <div class="col-lg-3 mb-3 mb-lg-0">
-                                <i class="fas fa-file-pdf fa-3x text-danger"></i>
-                            </div>
-                            <div class="col-lg-9">
-                                <h5 class="mb-0">{{ $paper->course_title }}</h5>
-                                <small class="text-muted">{{ $paper->course_code }}</small>
-                            </div>
-                        </div> --}}
+                    <div class="bg-white rounded border shadow-sm p-4">
 
                         <div class="d-flex">
                             

@@ -24,41 +24,35 @@
     <div id="app">
 
 
-        <section id="app-menu">
+        <section id="app-menu" class="p-4">
             <x-material-users/>
         </section>
 
 
 
-        <section id="app-content">
+        <section id="app-content" class="p-4">
 
+            <div class="container p-0">
 
-            <div class="jumbotron jumbotron-fluid border-bottom bg-white p-4 mb-0">
+                <div class="d-flex">
 
-                <div class="container">
-    
-                    <div class="d-flex">
-    
-                        <div class="mr-4">
-                            <button class="btn bg-blue text-white" id="menu-toggle" style="padding: 11px 16px; font-size: 1rem">
-                                <i class="fas fa-bars"></i>
-                            </button>
-                        </div>
-    
-                        <div class="flex-fill">
-                            @yield('nav')
-                        </div>
-    
+                    <div class="mr-4">
+                        <button class="btn bg-blue text-white" id="menu-toggle" style="padding: 11px 16px; font-size: 1rem">
+                            <i class="fas fa-bars"></i>
+                        </button>
                     </div>
-    
-                    @yield('header')
+
+                    <div class="flex-fill">
+                        @yield('nav')
+                    </div>
 
                 </div>
 
             </div>
 
+            <br>
 
-            <div class="container p-4">
+            <div class="container p-0">
                 @yield('content')
             </div>
 
@@ -69,9 +63,8 @@
 
     @include('partials.footer')
 
-    <script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
-    <script src="{{ asset('js/popper.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 
     @yield('scripts')

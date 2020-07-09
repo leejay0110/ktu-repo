@@ -4,7 +4,7 @@
 @section('nav')
 
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
+        <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item active" aria-current="page">Course Materials</li>
         </ol>
     </nav>
@@ -13,12 +13,12 @@
 
 @section('content')
 
-    <a href="{{ route('user.materials.create') }}" class="btn btn-blue mb-5">
+    {{-- <a href="{{ route('user.materials.create') }}" class="btn btn-blue mb-4">
         <i class="fas fa-plus-circle"></i>
         Add Course Materials
-    </a>
+    </a> --}}
 
-    <div class="bg-white rounded border p-4 p-lg-5">
+    <div class="bg-white rounded border p-4">
 
         @if (count(Auth::user()->materials))
     
@@ -66,7 +66,7 @@
             </div>
     
         @else
-            <p class="text-muted">
+            <p class="text-muted mb-0">
                 <i class="fas fa-exclamation-circle"></i>
                 No post found.
             </p>

@@ -1,41 +1,39 @@
 @extends('layouts.paper')
 
 
-@section('header')
+@section('content')
+    
+    <div class="bg-white rounded border shadow-sm p-4">
 
-    <h3>Looking for Past Exam Papers?</h3>
+        <h4>Looking for Past Exam Papers?</h4>
+
+        <form id="paper-search" action="{{ route('papers.search') }}" method="GET">
+            
+            @csrf
+
+            <div class="form-group mb-0">
+
+                <label for="">
+                    Start by typing the <strong>course title</strong>, <strong>course code</strong> or <strong>examiner name</strong>.
+                </label>
+                <div class="input-group">
+                    <input list="usersList" type="search" name="query" class="form-control" id="paperSearch" autocomplete="off" required>
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-blue">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </form>
+
+    </div>
 
     <br>
 
-    <form id="paper-search" action="{{ route('papers.search') }}" method="GET">
-        
-        @csrf
-
-        <div class="form-group">
-
-            <label for="">
-                Start by typing the <strong>course title</strong>, <strong>course code</strong> or <strong>examiner name</strong>.
-            </label>
-            <div class="input-group">
-                <input list="usersList" type="search" name="query" class="form-control" id="paperSearch" autocomplete="off" required>
-                <div class="input-group-append">
-                    <button type="submit" class="btn btn-blue">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-            </div>
-
-        </div>
-
-
-    </form>
-   
-
-@endsection
-
-
-@section('content')
-    
     <div id="results"></div>
 
 @endsection

@@ -1,37 +1,32 @@
 @extends('layouts.app')
 
 
-@section('header')
-    
-    <div class="jumbotron jumbotron-fluid bg-white border-bottom p-4 mb-0">
+@section('content')
 
-        <div class="container">
+    <div class="bg-white rounded border shadow-sm p-4">
+        
+        <h3>About {{ env('APP_NAME') }}</h3>
 
-            <h3>About {{ env('APP_NAME') }}</h3>
+        <br>
 
-            <br>
-
-            <p>
-                {{ env('APP_NAME') }} is the institutional repository of Koforidua Technical University.
-                {{ env('APP_NAME') }} is an open-access electronic archive developed for the collection, preservation and distribution of digital materials or resources.
-                The platform was built as a final year project work by four students from the computer science department;
-                three networking students and one computer science student.
-            </p>
-
-        </div>
+        <p>
+            {{ env('APP_NAME') }} is the institutional repository of Koforidua Technical University.
+            {{ env('APP_NAME') }} is an open-access electronic archive developed for the collection, preservation and distribution of digital materials or resources.
+            The platform was built as a final year project work by four students from the computer science department;
+            three networking students and one computer science student.
+        </p>
 
     </div>
 
-@endsection
+
+    <br>
 
 
-@section('content')
-
-    <div class="bg-white rounded border p-4 p-lg-5 mx-auto mb-4">
+    <div class="bg-white rounded border shadow-sm p-4">
 
         <h4 class="text-center">Why {{ env('APP_NAME') }}?</h4>
 
-        <br>
+        <hr>
 
         <dl>
 
@@ -56,17 +51,22 @@
 
     </div>
 
+
+    <br>
+
     
-    <div class="bg-white border rounded p-4 p-lg-5">
+    <div class="bg-white border rounded shadow-sm p-4">
 
         <h4 class="text-center">The Developers</h4>
 
-        <br>
+        <hr>
         
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
     
+
             <div class="col mb-4">
-                <div class="text-center pt-4">
+
+                <div class="text-center">
     
                     <img src="{{ asset('img/developers/lee.jpg')  }}" class="img-thumbnail rounded-circle" style="width: 8rem">
     
@@ -77,10 +77,13 @@
                     </small>
     
                 </div>
+
             </div>
     
+
             <div class="col mb-4">
-                <div class="text-center pt-4">
+
+                <div class="text-center">
     
                     <img src="{{ asset('img/developers/thompson.jpg')  }}" class="img-thumbnail rounded-circle" style="width: 8rem">
     
@@ -91,10 +94,13 @@
                     </small>
     
                 </div>
+
             </div>
     
+
             <div class="col mb-4">
-                <div class="text-center pt-4">
+
+                <div class="text-center">
     
                     <img src="{{ asset('img/developers/frimpong.jpg')  }}" class="img-thumbnail rounded-circle" style="width: 8rem">
     
@@ -105,10 +111,13 @@
                     </small>
     
                 </div>
+
             </div>
     
+
             <div class="col mb-4">
-                <div class="text-center pt-4">
+
+                <div class="text-center">
     
                     <img src="{{ asset('img/developers/gadzo.jpg')  }}" class="img-thumbnail rounded-circle" style="width: 8rem">
     
@@ -119,8 +128,10 @@
                     </small>
     
                 </div>
+
             </div>
     
+
         </div>
 
     </div>

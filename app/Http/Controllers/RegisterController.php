@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Auth;
 use App\User;
 use Illuminate\Http\Request;
+use App\Events\NewUserRegistered;
 use Illuminate\Support\Facades\Hash;
 use App\Notifications\UserRegistered;
+
 
 class RegisterController extends Controller
 {
@@ -33,6 +35,7 @@ class RegisterController extends Controller
             'username' => ['required',  'unique:users',  'max:255'],
             'email' => ['required', 'email', 'unique:users', 'max:255'],
             'password' => ['required', 'min:8'],
+            'roles' => ['required']
         ]);
 
         $user = User::create([
@@ -43,7 +46,12 @@ class RegisterController extends Controller
         ]);
 
 
+        // set user roles through event & listener
+        $roles = $data['roles'];
+        event(new NewUserRegistered($user, $roles));
 
+
+        // notify admin for account activation
         $admin = User::where('username', 'admin')->first();
         $admin->notify(new UserRegistered($user));
 

@@ -1,10 +1,10 @@
-<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-blue">
+<nav class="navbar navbar-expand-lg  navbar-dark bg-blue p-4">
 
-    <div class="container">
+    <div class="container p-0">
 
         <a href="{{ route('homepage') }}" class="navbar-brand mb-0 h1">{{ env('APP_NAME') }}</a>
 
-        <button class="navbar-toggler text-white border-0" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        <button class="navbar-toggler btn-dark-blue border-0" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button>

@@ -65,6 +65,11 @@ class Kernel extends HttpKernel
 
         'auth.admin' => \App\Http\Middleware\AuthAdmin::class,
         'auth.user' => \App\Http\Middleware\AuthUser::class,
-        'check.active.status' => \App\Http\Middleware\CheckActiveStatus::class
+        'check.active.status' => \App\Http\Middleware\CheckActiveStatus::class,
+
+        'pep.upload' => \App\Http\Middleware\PepUpload::class,
+        'cm.upload' => \App\Http\Middleware\CmUpload::class,
+
+
     ];
 }

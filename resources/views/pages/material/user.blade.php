@@ -4,7 +4,7 @@
 @section('nav')
 
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
+        <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item" aria-current="page">
                 <a href="{{ route('materials.index') }}">Course Materials</a>
             </li>
@@ -19,21 +19,23 @@
 @section('content')
 
 
-    <div class="mb-5 text-center">
+    <div class="bg-white rounded border shadow-sm text-center p-4">
     
         @if ( $user->avatar )
             <img src="{{ asset('storage' . Str::after($user->avatar, 'public')) }}" class="img-thumbnail rounded-circle" style="width: 7rem">
         @else
             <img src="{{ asset('img/default.png') }}" class="img-thumbnail rounded-circle" style="width: 7rem">
         @endif
-
         <h5>{{ $user->name }}</h5>
+
     </div>
+
+    <br>
 
 
     @if ($user->materials->count() )
 
-        <div class="bg-white rounded border p-4 p-lg-5 mb-5">
+        <div class="bg-white rounded border shadow-sm p-4 mb-4">
 
             <div class="table-responsive">
                 

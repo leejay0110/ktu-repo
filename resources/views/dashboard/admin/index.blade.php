@@ -4,7 +4,7 @@
 @section('nav')
 
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
+        <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
         </ol>
     </nav>
@@ -13,12 +13,11 @@
 
 @section('content')
 
-    <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
+    <div class="row row-cols-1 row-cols-xl-3">
 
         <div class="col mb-4">
             
-            
-            <div class="bg-white rounded border p-4 p-lg-5 mb-4">
+            <div class="bg-white rounded border p-4">
     
                 
                 <div class="text-center">
@@ -43,20 +42,5 @@
         </div>
 
     </div>
-
-    {{-- <div class="d-flex">
-
-        <div class="border bg-white rounded text-center p-4 p-lg-5 mr-4">
-            <h1 class="display-4 mb-0">{{ $users }}</h1>
-            <p>{{ $users == 1 ? 'Registered user' : 'Registered Users' }}</p>
-        </div>
-
-        <div class="border bg-white rounded text-center p-4 p-lg-5">
-            <h1 class="display-4 mb-0">{{ $deactivated }}</h1>
-            <p>{{ $deactivated == 1 ? 'Deactivated user' : 'Deactivated Users' }}</p>
-        </div>
-
-    </div> --}}
-
 
 @endsection

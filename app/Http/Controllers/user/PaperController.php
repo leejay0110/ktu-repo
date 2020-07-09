@@ -19,6 +19,7 @@ class PaperController extends Controller
         $this->middleware('auth');
         $this->middleware('auth.user');
         $this->middleware('check.active.status');
+        $this->middleware('pep.upload');
     }
 
 

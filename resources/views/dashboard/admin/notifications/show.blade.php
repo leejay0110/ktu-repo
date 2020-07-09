@@ -4,7 +4,7 @@
 @section('nav')
 
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
+        <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item active" aria-current="page">
                 <a href="{{ route('notifications.index') }}">Notifications</a>
             </li>
@@ -16,7 +16,7 @@
 
 @section('content')
 
-    <div class="bg-white rounded border p-4 p-lg-5">
+    <div class="bg-white rounded border p-4">
 
         <h3>New User Registered</h3>
 

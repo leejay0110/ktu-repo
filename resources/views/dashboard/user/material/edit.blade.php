@@ -4,7 +4,7 @@
 @section('nav')
 
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
+        <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item" aria-current="page">
                 <a href="{{ route('user.materials') }}">Course Materials</a>
             </li>
@@ -19,7 +19,7 @@
 
 @section('content')
 
-    <div class="bg-white rounded border p-4 p-lg-5">
+    <div class="bg-white rounded border p-4">
 
         <h3>Edit Details</h3>
     

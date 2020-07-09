@@ -5,7 +5,7 @@
 @section('nav')
     
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
+        <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item active" aria-current="page">
                 <a href="{{ route('admin.users') }}">Users</a>
             </li>
@@ -21,13 +21,13 @@
     
     
 
-    <div class="bg-white rounded border p-4 p-lg-5 mb-5">
+    <div class="bg-white rounded border p-4 mb-4">
 
         <h1>{{ $user->name }}</h1>
     
         <hr>
     
-        <dl class="row mb-5">
+        <dl class="row mb-4">
     
             <dt class="col-lg-3">Username</dt>
             <dd class="col-lg-9">{{ $user->username }}</dd>
@@ -74,7 +74,7 @@
     </div>
 
 
-    <div class="bg-white rounded border p-4 p-lg-5 mb-5">
+    <div class="bg-white rounded border p-4 mb-4">
     
 
         <h3>Past Exam Papers &amp; Course Materials</h3>

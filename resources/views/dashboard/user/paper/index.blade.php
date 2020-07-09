@@ -4,7 +4,7 @@
 @section('nav')
 
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
+        <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item active" aria-current="page">Past Exam Papers</li>
         </ol>
     </nav>
@@ -15,14 +15,14 @@
 
 
 
-    <a href="{{ route('user.papers.create') }}" class="btn btn-blue mb-5">
+    {{-- <a href="{{ route('user.papers.create') }}" class="btn btn-blue mb-4">
         <i class="fas fa-plus-circle"></i>
         Add Past Examination Paper
-    </a>
+    </a> --}}
 
 
     
-    <div class="bg-white rounded border p-4 p-lg-5">
+    <div class="bg-white rounded border p-4">
         
         @if (Auth::user()->papers->count())
 
@@ -78,7 +78,7 @@
             </div>
 
         @else
-            <p class="text-muted">
+            <p class="text-muted mb-0">
                 <i class="fas fa-info-circle"></i>
                 No data found
             </p>

@@ -18,6 +18,7 @@ class MaterialController extends Controller
         $this->middleware('auth');
         $this->middleware('auth.user');
         $this->middleware('check.active.status');
+        $this->middleware('cm.upload');
     }
 
 

@@ -5,7 +5,7 @@
 @section('nav')
 
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
+        <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item active" aria-current="page">User Details</li>
         </ol>
     </nav>
@@ -17,7 +17,7 @@
 @section('content')
     
 
-    <div class="bg-white rounded border p-4 p-lg-5 mb-5">
+    <div class="bg-white rounded border p-4 mb-4">
 
 
         <h3>{{ Auth::user()->name }}</h3>

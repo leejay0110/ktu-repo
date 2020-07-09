@@ -4,7 +4,7 @@
 @section('nav')
 
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
+        <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item active" aria-current="page">Notifications</li>
         </ol>
     </nav>
@@ -18,7 +18,7 @@
 
 @if(Auth::user()->notifications->count())
         
-        <div class="mb-5">
+        <div class="mb-4">
         
             <form class="d-inline" action="{{ route('notifications.mark-all-as-read') }}" method="post">
                 @csrf
@@ -38,7 +38,7 @@
 
 
 
-<div class="bg-white rounded border p-4 p-lg-5 mb-5">
+<div class="bg-white rounded border p-4 mb-4">
 
 
     <div class="table-responsive">

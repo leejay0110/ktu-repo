@@ -1,10 +1,9 @@
-{{-- <footer id="footer" class="border-top" style="background-color: #F5F5FA"> --}}
-<footer id="footer" class="bg-dark text-white">
 
-    <div class="container px-4 py-5">
+<footer id="footer" class="bg-dark text-white p-4">
+
+    <div class="container p-0">
 
         <div class="row">
-
 
             <div class="col-lg mb-4 mb-lg-0">
                 <h3>{{ env('APP_NAME') }}</h3>

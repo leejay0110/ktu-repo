@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <div class="mx-auto bg-white  rounded border p-4 p-lg-5" style="max-width: 24rem">
+    <div class="mx-auto bg-white rounded border shadow-sm p-4" style="max-width: 24rem">
 
 
         <h2>Register</h2>
@@ -46,6 +46,32 @@
                 @if ($errors->has('password'))
                 <small class="form-text text-danger">{{ $errors->first('password') }}</small>
                 @endif
+            </div>
+
+
+            <div class="form-group">
+
+                <div>
+                    <h6 class="font-weight-bold">Select Account Privileges</h6>
+                    <p>Please select your account privilege</p>
+                </div>
+
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="paper" name="roles" class="custom-control-input" value="pep upload" required>
+                    <label class="custom-control-label" for="paper">Past examination papers upload</label>
+                </div>
+                
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="course_material" name="roles" class="custom-control-input" value="cm upload">
+                    <label class="custom-control-label" for="course_material">Course materials upload</label>
+                </div>
+
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="both" name="roles" class="custom-control-input" value="both">
+                    <label class="custom-control-label" for="both">Both</label>
+                </div>
+
+
             </div>
     
             <button type="submit" class="btn btn-success btn-block">Submit</button>
