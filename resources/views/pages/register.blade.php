@@ -17,7 +17,7 @@
             @csrf
     
             <div class="form-group">
-                <label>Name</label> <br>
+                <label>Full Name</label> <br>
                 <input type="text" name="name" class="form-control {{ $errors->has('name') ? 'border-danger' : '' }}" value="{{ old('name') }}" required>
                 @if ($errors->has('name'))
                 <small class="form-text text-danger">{{ $errors->first('name') }}</small>

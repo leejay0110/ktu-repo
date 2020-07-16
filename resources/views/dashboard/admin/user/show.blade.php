@@ -53,7 +53,6 @@
         </dl>
 
 
-
         @if ($user->isActive())
             <form action="{{ route('admin.users.deactivate', $user) }}" method="POST">
                 @csrf
@@ -68,11 +67,59 @@
             </form>
         @endif
 
-
-        
-
     </div>
 
+
+    <div class="bg-white rounded border p-4 mb-4">
+
+        <h3>User Roles</h3>
+
+        <hr>
+
+        
+        <ul class="list-group list-group-flush">
+
+            @foreach ($roles as $role)
+
+                <li class="list-group-item">
+
+                    @if ( $user->roles->pluck('name')->contains( $role->name ) )
+
+                        <span class="text-success">
+                            {{ ( $role->name  == 'pep upload' ) ? 'Past Examination Paper Upload' : 'Course Materials Upload' }}
+                        </span>
+                    
+                        <form action="{{ route('admin.users.roles.destroy', [ 'user' => $user, 'role' => $role ]) }}" method="post"  class="d-inline float-right">
+
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn btn-danger">Delete Role</button>
+
+                        </form>
+
+                    @else
+                    
+                        <span class="text-danger">
+                            {{ ( $role->name  == 'pep upload' ) ? 'Past Examination Paper Upload' : 'Course Materials Upload' }}
+                        </span>
+
+                        <form action="{{ route('admin.users.roles.add', [ 'user' => $user, 'role' => $role ]) }}" method="post" class="d-inline float-right">
+
+                            @csrf
+                            @method('put')
+                            <button type="submit" class="btn btn-success">Add Role</button>
+
+                        </form>
+
+                    @endif
+                    
+                </li>
+
+            @endforeach
+
+        </ul>
+
+    </div>
 
     <div class="bg-white rounded border p-4 mb-4">
     

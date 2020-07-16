@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\User;
+use App\Role;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -30,8 +31,11 @@ class UserController extends Controller
     function show(User $user)
     {
 
+        $roles = Role::all();
+
         return view('dashboard.admin.user.show', [
-            'user' => $user
+            'user' => $user,
+            'roles' => $roles
         ]);
 
     }
@@ -61,9 +65,9 @@ class UserController extends Controller
 
     function resetPassword(User $user)
     {
-        $user->password = Hash::make('password');
+        $user->password = Hash::make('pass1234');
         $user->save();
-        return redirect()->back()->with('success', 'Password reset was successful.');
+        return redirect()->back()->with('success', 'Password reset was successful. New password = pass1234.');
 
     }
 

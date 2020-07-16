@@ -68,6 +68,11 @@ Route::put('admin/users/{user}/deactivate', 'admin\UserController@deactivate')->
 Route::put('admin/users/{user}/password_reset', 'admin\UserController@resetPassword')->name('admin.users.password_reset');
 
 
+Route::put('admin/users/{user}/roles/{role}/add', 'admin\RoleController@add')->name('admin.users.roles.add');
+
+Route::delete('admin/users/{user}/roles/{role}/delete', 'admin\RoleController@destroy')->name('admin.users.roles.destroy');
+
+
 
 Route::get('admin/notifications', 'admin\NotificationController@index')->name('notifications.index');
 Route::get('admin/notifications/{notification}', 'admin\NotificationController@show')->name('notifications.show');
