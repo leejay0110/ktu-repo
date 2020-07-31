@@ -1,8 +1,8 @@
 @if (session('error'))
 
-    <div class="alert alert-danger fade show border-top-0 border-left-0 border-right-0 rounded-0 mb-0" role="alert">
+    <div class="alert alert-danger fade show border-top-0 border-left-0 border-right-0 rounded-0 mb-0 px-4 py-3" role="alert">
 
-        <div class="container">
+        <div class="container p-0">
 
             <i class="fas fa-exclamation-circle"></i>
             {{ session('error') }}
@@ -18,9 +18,9 @@
 
 @if (session('success'))
 
-    <div class="alert alert-success fade show border-top-0 border-left-0 border-right-0 rounded-0 mb-0" role="alert">
+    <div class="alert alert-success fade show border-top-0 border-left-0 border-right-0 rounded-0 mb-0 px-4 py-3" role="alert">
 
-        <div class="container">
+        <div class="container p-0">
 
             <i class="fas fa-check-circle"></i>
             {{ session('success') }}

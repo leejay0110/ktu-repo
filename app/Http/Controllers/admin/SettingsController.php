@@ -19,9 +19,9 @@ class SettingsController extends Controller
 
 
 
-    function index()
+    function details()
     {
-        return view('dashboard.admin.settings.index');
+        return view('dashboard.admin.settings.details');
     }
 
 
@@ -46,7 +46,7 @@ class SettingsController extends Controller
         $user->email = $request->email;
         $user->save();
 
-        return redirect()->route('admin.settings')->with('success', 'Update was successful.');
+        return redirect()->route('admin.settings.details')->with('success', 'Update was successful.');
         
     }
 
@@ -64,13 +64,14 @@ class SettingsController extends Controller
     {
         $request->validate([
             'password_old' => 'required',
-            'password_new' => 'required|min:3'
+            'password' => 'required|min:8|confirmed',
+            'password_confirmation' => 'required'
         ]);
 
         if(Hash::check($request->password_old, Auth::user()->password))
         {
             $user = Auth::user();
-            $user->password = Hash::make($request->password_new);
+            $user->password = Hash::make($request->password);
             $user->save();
 
             return redirect()->back()->with('success', 'Your password has been updated successfully.');

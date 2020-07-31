@@ -22,6 +22,6 @@ class CheckActiveStatus
         }
 
         Auth::logout();
-        return redirect()->route('login.show')->with('error', 'Your account is deactivated. Contact the admin.');
+        return redirect()->route('login.show')->with('error', 'Your account has been deactivated.');
     }
 }

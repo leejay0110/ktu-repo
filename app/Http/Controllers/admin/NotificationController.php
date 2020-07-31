@@ -32,11 +32,15 @@ class NotificationController extends Controller
             $notification->markAsRead();
         }
 
-        $active = User::findOrFail($notification->data['id'])->isActive();
+        $approved = User::findOrFail($notification->data['id'])->isApproved();
+
+        $user = User::findOrFail( $notification->data['id'] );
         
+
         return view('dashboard.admin.notifications.show', [
             'notification' => $notification,
-            'active' => $active
+            'approved' => $approved,
+            'user' => $user
         ]);
     }
     

@@ -1,27 +1,36 @@
-<div class="text-center">
-    <i class="fas fa-users fa-4x text-blue"></i> <br>
-    <h6>Platform Users</h6>
-</div>
+<nav class="navbar navbar-dark bg-blue px-4 py-3">
 
-<hr>
+    <span class="navbar-brand">Platform Users</span>
 
-<div class="" id="menu-list">
+    <button class="btn btn-danger btn-sm" id="menu-close">
+        <i class="fas fa-arrow-left"></i>
+    </button>
+
+</nav>
+
+
+
+
+
+<div class="container p-4">
 
     @if ($users->count())
 
-    <nav class="nav flex-column">
-        @foreach ($users as $user)
-            <a class="nav-link px-0 py-1 text-dark" href="{{ route('materials.user', $user) }}">{{ $user->name }}</a>
-        @endforeach
-    </nav>
+        <div class="list-group list-group-flush"  id="menu-list">
+            @foreach ($users as $user)
+                <a class="list-group-item list-group-item-action" href="{{ route('materials.user', $user) }}">{{ $user->name }}</a>
+            @endforeach
+        </div>
     
     @else
     
-    <p class="alert alert-info mb-0">
-        <i class="fas fa-info-circle"></i>
-        No user found
-    </p>
+        <p class="alert alert-info mb-0">
+            <i class="fas fa-info-circle"></i>
+            No user found
+        </p>
     
     @endif
-
+    
 </div>
+
+

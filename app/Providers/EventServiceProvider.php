@@ -20,6 +20,10 @@ class EventServiceProvider extends ServiceProvider
             SendEmailVerificationNotification::class,
         ],
 
+        'App\Events\NewUserRegistered' => [
+            'App\Listeners\SetUserRoles',
+        ],
+
     ];
 
     /**

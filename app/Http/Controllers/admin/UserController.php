@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\User;
+use App\Role;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -19,11 +20,9 @@ class UserController extends Controller
     {
 
         $users = User::where('admin', 0)->orderBy('active', 'desc')->orderBy('name')->get();
-        $deactivated = User::where('admin', 0)->where('active', 0)->orderBy('name')->get();
 
         return view('dashboard.admin.user.index', [
-            'users' => $users,
-            'deactivated' => $deactivated
+            'users' => $users
         ]);
         
     }
@@ -32,12 +31,25 @@ class UserController extends Controller
     function show(User $user)
     {
 
+        $roles = Role::all();
+
         return view('dashboard.admin.user.show', [
-            'user' => $user
+            'user' => $user,
+            'roles' => $roles
         ]);
 
     }
 
+
+    function approve(User $user)
+    {
+
+        $user->approved = 1;
+        $user->save();
+
+        return redirect()->back()->with('success', 'Account approved successfully.');
+
+    }
 
     function activate(User $user)
     {
@@ -45,7 +57,7 @@ class UserController extends Controller
         $user->active = 1;
         $user->save();
 
-        return redirect()->back()->with('success', 'User activated successful.');
+        return redirect()->back()->with('success', 'User activated successfully.');
 
     }
 
@@ -55,7 +67,7 @@ class UserController extends Controller
         $user->active = 0;
         $user->save();
 
-        return redirect()->back()->with('success', 'User deactived successful.');
+        return redirect()->back()->with('success', 'User deactived successfully.');
 
     }
 
@@ -63,12 +75,11 @@ class UserController extends Controller
 
     function resetPassword(User $user)
     {
-        $user->password = Hash::make('password');
+        $user->password = Hash::make('pass1234');
         $user->save();
-        return redirect()->back()->with('success', 'Password reset was successful.');
+        return redirect()->back()->with('success', 'Password reset was successful. New password = pass1234.');
 
     }
-
-
+    
 
 }

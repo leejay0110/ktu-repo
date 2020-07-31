@@ -43,6 +43,18 @@ Route::post('logout', 'LoginController@logout')->name('logout');
 
 
 
+// Password Reset
+
+Route::get('password/request', 'PasswordResetController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'PasswordResetController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', 'PasswordResetController@reset')->name('password.reset');
+
+
+
+
+
+
+
 // Admin Routes
 
 Route::get('admin', 'admin\AdminController@index')->name('admin.index');
@@ -53,7 +65,13 @@ Route::get('admin/users', 'admin\UserController@index')->name('admin.users');
 Route::get('admin/users/{user}', 'admin\UserController@show')->name('admin.users.show');
 Route::put('admin/users/{user}/activate', 'admin\UserController@activate')->name('admin.users.activate');
 Route::put('admin/users/{user}/deactivate', 'admin\UserController@deactivate')->name('admin.users.deactivate');
+Route::put('admin/users/{user}/approve', 'admin\UserController@approve')->name('admin.users.approve');
 Route::put('admin/users/{user}/password_reset', 'admin\UserController@resetPassword')->name('admin.users.password_reset');
+
+
+Route::put('admin/users/{user}/roles/{role}/add', 'admin\RoleController@add')->name('admin.users.roles.add');
+
+Route::delete('admin/users/{user}/roles/{role}/delete', 'admin\RoleController@destroy')->name('admin.users.roles.destroy');
 
 
 
@@ -66,7 +84,7 @@ Route::delete('admin/notifications/delete', 'admin\NotificationController@delete
 
 
 
-Route::get('admin/settings', 'admin\SettingsController@index')->name('admin.settings');
+Route::get('admin/settings/details', 'admin\SettingsController@details')->name('admin.settings.details');
 Route::get('admin/settings/edit-details', 'admin\SettingsController@editDetails')->name('admin.settings.edit-details');
 Route::get('admin/settings/edit-password', 'admin\SettingsController@editPassword')->name('admin.settings.edit-password');
 Route::put('admin/settings/edit-details', 'admin\SettingsController@updateDetails')->name('admin.settings.update-details');
@@ -82,7 +100,7 @@ Route::put('admin/settings/edit-password', 'admin\SettingsController@updatePassw
 Route::get('user', 'user\UserController@index')->name('user.index');
 
 
-Route::get('user/settings', 'user\SettingsController@index')->name('user.settings');
+Route::get('user/settings/details', 'user\SettingsController@details')->name('user.settings.details');
 Route::get('user/settings/edit-details', 'user\SettingsController@editDetails')->name('user.settings.edit-details');
 Route::get('user/settings/edit-avatar', 'user\SettingsController@editAvatar')->name('user.settings.edit-avatar');
 Route::get('user/settings/edit-password', 'user\SettingsController@editPassword')->name('user.settings.edit-password');
@@ -123,3 +141,5 @@ Route::delete('user/materials/files/{file}/destroy', 'user\FileController@destro
 // Route::get('file/open/{paper}', 'FileController@open')->name('paper.open');
 Route::get('papers/{paper}/download', 'FileController@downloadPaper')->name('papers.download');
 Route::get('material/{file}/download', 'FileController@downloadMaterial')->name('materials.download');
+
+Route::get('materials/{material}/donwload/all', 'FileController@downloadAll')->name('materials.download.all');

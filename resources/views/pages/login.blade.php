@@ -2,40 +2,54 @@
 
 @section('content')
     
-    <div class="mx-auto" style="max-width: 24rem">
 
-        <h1>Sign in</h1>
-        <p>Please enter your login details.</p>
+    <div class="mx-auto card" style="max-width: 24rem">
 
-        <br>
+        <div class="card-header">
+            
+            <h4>Sign in</h4>
+            <p class="text-muted mb-0">Please enter your login details.</p>
 
-        <form action="{{ route('login') }}" method="post">
+        </div>
+        
 
-            @csrf
+        <div class="card-body">
+
+            <form action="{{ route('login') }}" method="post">
     
-            <div class="form-group">
-                <label>Username</label> <br>
-                <input type="text" name="username" class="form-control {{ $errors->has('username') ? 'border-danger' : '' }}" required>
-                @if ($errors->has('username'))
-                <small class="form-text text-danger">{{ $errors->first('username') }}</small>
-                @endif
-            </div>
+                @csrf
+        
+                <div class="form-group">
+                    <label>Username</label> <br>
+                    <input type="text" name="username" class="form-control {{ $errors->has('username') ? 'border-danger' : '' }}" required>
+                    @if ($errors->has('username'))
+                    <small class="form-text text-danger">{{ $errors->first('username') }}</small>
+                    @endif
+                </div>
+        
+                <div class="form-group">
+                    <label>Password</label> <br>
+                    <input type="password" name="password" class="form-control {{ $errors->has('password') ? 'border-danger' : '' }}" required>
+                    @if ($errors->has('password'))
+                    <small class="form-text text-danger">{{ $errors->first('password') }}</small>
+                    @endif
+                </div>
+        
+                <button type="submit" class="btn btn-success btn-block">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Sign in
+                </button>
+        
+            </form>
     
-            <div class="form-group">
-                <label>Password</label> <br>
-                <input type="password" name="password" class="form-control {{ $errors->has('password') ? 'border-danger' : '' }}" required>
-                @if ($errors->has('password'))
-                <small class="form-text text-danger">{{ $errors->first('password') }}</small>
-                @endif
-            </div>
+            <br><br>
     
-            <button type="submit" class="btn btn-success btn-block">Sign in</button>
+            <p>Don't have an account? <a href="{{ route('register') }}">Create one.</a></p>
     
-        </form>
+            <p>Forgot your password? <a href="{{ route('password.request') }}">Reset.</a></p>
 
-        <br><br>
+        </div>
 
-        <p>Don't have an account? <a href="{{ route('register') }}">Create one.</a></p>
 
     </div>
 

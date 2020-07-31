@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Auth;
 use App\User;
 use Illuminate\Http\Request;
+use App\Events\NewUserRegistered;
 use Illuminate\Support\Facades\Hash;
 use App\Notifications\UserRegistered;
+
 
 class RegisterController extends Controller
 {
@@ -29,10 +31,11 @@ class RegisterController extends Controller
     {
 
         $data = $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'username' => ['required', 'string',  'unique:users',  'max:255'],
-            'email' => ['required', 'string', 'email', 'unique:users', 'max:255'],
-            'password' => ['required', 'string', 'min:6'],
+            'name' => ['required', 'max:255'],
+            'username' => ['required',  'unique:users',  'max:255'],
+            'email' => ['required', 'email', 'unique:users', 'max:255'],
+            'password' => ['required', 'min:8'],
+            'roles' => ['required']
         ]);
 
         $user = User::create([
@@ -43,13 +46,18 @@ class RegisterController extends Controller
         ]);
 
 
+        // set user roles through event & listener
+        $roles = $data['roles'];
+        event(new NewUserRegistered($user, $roles));
 
+
+        // notify admin for account activation
         $admin = User::where('username', 'admin')->first();
         $admin->notify(new UserRegistered($user));
 
 
         
-        return redirect()->route('login.show')->with('success', 'Your accunt has been created but awaitng activation. Please contact the admin.');
+        return redirect()->route('login.show')->with('success', 'Your accunt has been created but awaitng approval.');
 
 
 

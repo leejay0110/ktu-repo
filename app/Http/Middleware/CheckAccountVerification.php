@@ -21,6 +21,6 @@ class CheckAccountVerification
         }
 
         Auth::logout();
-        return redirect()->route('login')->with('error', 'Your account has not been verified yet. Contact the admin.');
+        return redirect()->route('login')->with('error', 'Your account has not been verified yet.');
     }
 }

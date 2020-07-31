@@ -38,6 +38,6 @@ $('#user-search-form').submit(function(e) {
 
 
 
-$('#menu-toggle').click(function() {
-    $('#app-menu').toggle();
+$('#menu-toggle, #app-overlay, #menu-close').click(function() {
+    $('#app-menu, #app-overlay').toggle();
 });

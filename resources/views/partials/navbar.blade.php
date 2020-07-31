@@ -1,32 +1,20 @@
-<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-blue">
+<nav class="navbar navbar-expand-lg  navbar-dark bg-blue px-4 py-3">
 
-    <div class="container-fluid">
+    <div class="container p-0">
 
         <a href="{{ route('homepage') }}" class="navbar-brand mb-0 h1">{{ env('APP_NAME') }}</a>
 
-        <button class="navbar-toggler text-white border-0" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        <button class="navbar-toggler btn btn-dark-blue border-0 p-2" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i>
+            <i class="fas fa-align-justify"></i>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 
             <div class="navbar-nav mr-auto">
-                <a class="nav-item nav-link {{ Route::is('papers.index') ? 'active' : '' }}" href="{{ route('papers.index') }}">Past Exam Papers</a>
+                <a class="nav-item nav-link {{ Route::is('papers.index') ? 'active' : '' }}" href="{{ route('papers.index') }}">Past Examination Papers</a>
                 <a class="nav-item nav-link {{ Route::is('materials.*') ? 'active' : '' }}" href="{{ route('materials.index') }}">Course Materials</a>
                 <a class="nav-item nav-link {{ Route::is('about') ? 'active' : '' }}" href="{{ route('about') }}">About</a>
-
-
-                {{-- <li class="nav-item dropdown">
-                    
-                    <a class="nav-link {{ Route::is('about.*') ? 'active' : '' }} dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
-
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('about.index') }}">About KTU Repo</a>
-                        <a class="dropdown-item" href="{{ route('about.developers') }}">Developers</a>
-                    </div>
-                </li> --}}
-                
             </div>
             
 
@@ -72,7 +60,7 @@
 
                 <div class="dropdown">
 
-                    <button class="btn text-white dropdown-toggle" type="button" id="appDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-dark-blue dropdown-toggle" type="button" id="appDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-user-circle"></i>
                         {{ Auth::user()->username }}
                     </button>
@@ -86,8 +74,9 @@
                         @endif
 
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="post" style="display: none">
                             @csrf

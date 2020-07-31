@@ -1,11 +1,16 @@
 @extends('layouts.admin')
 
 
+@section('style')
+<link rel="stylesheet" type="text/css" href="{{ asset('css/datatables.min.css') }}"/>
+@endsection
+
+
 
 @section('nav')
     
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
+        <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item active" aria-current="page">Users</li>
         </ol>
     </nav>
@@ -17,27 +22,23 @@
 @section('content')
     
 
-    <ul class="nav nav-tabs" id="usersTab" role="tablist">
-        <li class="nav-item">
-            <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">All</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="deactivated-tab" data-toggle="tab" href="#deactivated" role="tab" aria-controls="deactivated" aria-selected="false">Deactivated</a>
-        </li>
-    </ul>
-
-    <div class="tab-content mt-5" id="myTabContent">
+    <div class="card my-5">
         
-
-        {{-- all users --}}
-        <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
-
-            @if ($users->count())
-
+        <h6 class="card-header">
+            Users
+            <span class="badge badge-pill badge-dark">
+                {{ $users->count() }}
+            </span>
+        </h6>
+        
+        <div class="card-body">
+            
+            @if ( $users->count() )
+            
                 <div class="table-responsive">
-
-                    <table class="table table-striped table-borderless table-hover mb-0">
-
+                
+                    <table class="table table-borderless table-striped table-hover" id="all-users">
+                
                         <thead>
                             <tr>
                                 <th>Name &Tilde; Username</th>
@@ -45,9 +46,11 @@
                                 <th>Active</th>
                             </tr>
                         </thead>
-
+                
                         <tbody>
+                
                             @foreach ($users as $user)
+                
                                 <tr>
                                     <td>
                                         {{ $user->name }} &Tilde;
@@ -56,88 +59,53 @@
                                     <td>{{ $user->created_at->isoFormat('LLL') }}</td>
                                     <td>
                                         @if ($user->isActive())
-                                            <i class="fas fa-check-circle fa-lg text-success"></i>
+                                            <span class="text-success">
+                                                <i class="fas fa-check-circle"></i> Active
+                                            </span>
                                         @else
-                                            <i class="fas fa-times-circle fa-lg text-danger"></i>
+                                            <span class="text-danger">
+                                                <i class="fas fa-times-circle"></i> Deactived
+                                            </span>
                                         @endif
                                     </td>
                                 </tr>
+                                
                             @endforeach
+                
                         </tbody>
-
-                        <caption>
-                            Users
-                            <span class="badge badge-pill badge-dark">{{ $users->count() }}</span>
-                        </caption>
-
+                
                     </table>
-
+                
                 </div>
 
             @else
-
-                <div class="alert alert-info">
-                    <i class="fas fa-info-circle"></i>
-                    No data found
-                </div>
-
-            @endif
-
-        </div>
-
-
-        {{-- deactivated users --}}
-        <div class="tab-pane fade" id="deactivated" role="tabpanel" aria-labelledby="deactivated-tab">
-
-            @if ($deactivated->count())
-
-                <div class="table-responsive">
-
-                    <table class="table table-striped table-borderless table-hover mb-0">
-
-                        <thead>
-                            <tr>
-                                <th>Name &Tilde; username</th>
-                                <th>Created</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-
-                            @foreach ($deactivated as $user)
-
-                                <tr>
-                                    <td>
-                                        {{ $user->name }} &Tilde;
-                                        <a href="{{ route('admin.users.show', $user) }}">{{ $user->username }}</a>
-                                    </td>
-                                    <td>{{ $user->created_at->isoFormat('LLL') }}</td>
-                                </tr>
-
-                            @endforeach
-
-                        </tbody>
-
-                        <caption>
-                            Users
-                            <span class="badge badge-pill badge-dark">{{ $deactivated->count() }}</span>
-                        </caption>
-
-                    </table>
-
-                </div>
-
-            @else
-
-                <div class="alert alert-info">
-                    <i class="fas fa-info-circle"></i>
-                    No data found
-                </div>
+            
+                <p class="text-info mb-0">
+                    <i class="fas fa-info-circle"></i> No user found
+                </p>
 
             @endif
 
+
         </div>
+
 
     </div>
+
+
+@endsection
+
+
+@section('script')
+
+<script type="text/javascript" src="{{ asset('js/datatables.min.js') }}"></script>
+
+<script>
+
+    $(document).ready( function () {
+        $('#all-users').DataTable();
+    } );
+
+</script>
 
 @endsection

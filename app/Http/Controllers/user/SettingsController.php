@@ -16,14 +16,15 @@ class SettingsController extends Controller
     {
         $this->middleware('auth');
         $this->middleware('auth.user');
+        $this->middleware('check.approval');
         $this->middleware('check.active.status');
     }
 
 
 
-    function index()
+    function details()
     {
-        return view('dashboard.user.settings.index');
+        return view('dashboard.user.settings.details');
     }
 
 
@@ -48,7 +49,7 @@ class SettingsController extends Controller
         $user->email = $request->email;
         $user->save();
 
-        return redirect()->route('user.settings')->with('success', 'Details updated successfully.');
+        return redirect()->route('user.settings.details')->with('success', 'Details updated successfully.');
         
     }
 
@@ -67,8 +68,9 @@ class SettingsController extends Controller
 
 
         // delete old avatar
-        Storage::delete(Auth::user()->avatar);
-
+        if ( Auth::user()->avatar ) {
+            Storage::delete(Auth::user()->avatar);
+        }
 
         // upload new avatar
         $filename = Auth::user()->username . "." . $request->File('avatar')->getClientOriginalExtension();
@@ -112,13 +114,14 @@ class SettingsController extends Controller
     {
         $request->validate([
             'password_old' => 'required',
-            'password_new' => 'required|min:3'
+            'password' => 'required|min:8|confirmed',
+            'password_confirmation' => 'required'
         ]);
 
         if(Hash::check($request->password_old, Auth::user()->password))
         {
             $user = Auth::user();
-            $user->password = Hash::make($request->password_new);
+            $user->password = Hash::make($request->password);
             $user->save();
 
             return redirect()->back()->with('success', 'Password updated successfully.');

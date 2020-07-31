@@ -1,13 +1,13 @@
-<footer id="footer" class="border-top" style="background-color: #e2e8f0">
 
-    <div class="container px-4 py-5">
+<footer id="footer" class="bg-dark text-white px-4 py-5">
+
+    <div class="container p-0">
 
         <div class="row">
 
-
             <div class="col-lg mb-4 mb-lg-0">
                 <h3>{{ env('APP_NAME') }}</h3>
-                <p>Copyright &COPY; {{ now()->year }} <br> kturepo.edu.gh</p>
+                <p>Copyright &COPY; {{ now()->year }} <br> repo.ktu.edu.gh</p>
             </div>
 
 
@@ -16,9 +16,9 @@
                 <h5 class="mb-3">Site Links</h5>
                 <div>
                     <a class="d-block my-2" href="{{ route('homepage') }}">Homepage</a>
-                    <a class="d-block my-2" href="{{ route('papers.index') }}">Past Exam Papers</a>
+                    <a class="d-block my-2" href="{{ route('papers.index') }}">Past Examination Papers</a>
                     <a class="d-block my-2" href="{{ route('materials.index') }}">Course Materials</a>
-                    <a class="d-block my-2" href="{{ route('about') }}">About KTU Repo</a>
+                    <a class="d-block my-2" href="{{ route('about') }}">About</a>
                 
                     @guest
                         <a class="d-block my-2" href="{{ route('login.show') }}">Sign in</a>

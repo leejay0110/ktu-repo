@@ -4,7 +4,7 @@
 @section('nav')
 
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
+        <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item" aria-current="page">
                 <a href="{{ route('materials.index') }}">Course Materials</a>
             </li>
@@ -21,93 +21,119 @@
 
 @section('content')
     
-    
-    <div class="bg-white rounded-lg shadow-sm p-4 p-lg-5 mb-5">
 
-        <h3>{{ $material->course_title }}</h3>
+    
 
-        <p class="text-muted">{{ $material->course_code }}</p>
-    
-        <hr>
-    
-        <dl class="row">
-    
-            <dt class="col-lg-3">Course Title</dt>
-            <dd class="col-lg-9">{{ $material->course_title }}</dd>
-    
-            <dt class="col-lg-3">Course Code</dt>
-            <dd class="col-lg-9">{{ $material->course_code }}</dd>
-    
-            <dt class="col-lg-3">Lecturer Name</dt>
-            <dd class="col-lg-9">{{ $material->lecturer }}</dd>
-    
-            <dt class="col-lg-3">Created</dt>
-            <dd class="col-lg-9">{{ $material->created_at->isoFormat('LLL') }}</dd>
-    
-        </dl>
+    <div class="px-4 my-5">
 
+        <div class="container card p-0">
+
+            <div class="card-header">
+                <h5 class="mb-0">{{ $material->course_title }}</h5>
+                <p class="text-muted mb-0">{{ $material->course_code }}</p>
+            </div>
+
+            <div class="card-body">
+
+                <dl class="row mb-0">
+            
+                    <dt class="col-lg-3">Course Title &Tilde; Code</dt>
+                    <dd class="col-lg-9">{{ $material->course_title }} &Tilde; {{ $material->course_code }}</dd>
+            
+                    <dt class="col-lg-3">Lecturer Name</dt>
+                    <dd class="col-lg-9">{{ $material->lecturer }}</dd>
+            
+                    <dt class="col-lg-3">Created</dt>
+                    <dd class="col-lg-9">{{ $material->created_at->isoFormat('LLL') }}</dd>
+            
+                </dl>
+
+            </div>
+
+        </div>
+    
     </div>
 
 
 
+    <div class="px-4 my-5">
+    
 
-    <div class="mb-5">
+        <div class="container card p-0">
 
-
-        
-        <div class="bg-white rounded-lg shadow-sm p-4 p-lg-5">
             
-            <h4 class="mb-3">Attached Files</h4>
+            <h6 class="card-header">
+                Attached Files
+                <span class="badge badge-pill badge-dark">
+                    {{ $material->files->count() }}
+                </span>
+            </h6>
 
-            <hr>
+            <div class="card-body">
 
-            @if ( $material->files->count() )
-        
-                <div class="table-responsive-lg">
-
-                    <table class="table table-borderless table-striped table-hover">
-
-                        <thead>
-                            <tr>
-                                <th>Filename</th>
-                                <th colspan="2">Size</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-
-                            @foreach ($material->files as $file)
-                            
+                @if ( $material->files->count() )
+            
+                    <div class="table-responsive-lg">
+    
+                        <table class="table table-borderless table-striped table-hover mb-0">
+    
+                            <thead>
                                 <tr>
-                                    <td>{{ $file->filename }}</td>
-                                    <td>{{ $file->size() }}</td>
-                                    <td>
-                                        <a href="{{ route('materials.download', $file) }}" target="_blank">
-                                            <i class="fas fa-download"></i>
-                                        </a>
-                                    </td>
+                                    <th>Filename</th>
+                                    <th colspan="2">Size</th>
                                 </tr>
+                            </thead>
+    
+                            <tbody>
+    
+                                @foreach ($material->files as $file)
+                                
+                                    <tr>
+                                        <td class="text-lowercase">{{ $file->filename }}</td>
+                                        <td class="">{{ $file->size() }}</td>
+                                        <td>
+                                            <a href="{{ route('materials.download', $file) }}" target="_blank">
+                                                <i class="fas fa-download"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+    
+                                @endforeach
+    
+                            </tbody>
+    
+                        </table>
+    
+                    </div>
+    
+                @else
+                
+                    <p class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        No file found
+                    </p>
+    
+                @endif
 
-                            @endforeach
+            </div>
 
-                        </tbody>
+            @if ( $material->files->count() > 1 )
+            
+                <div class="card-footer">
 
-                    </table>
+                    <a href="{{ route('materials.download.all', $material) }}" class="btn btn-success">
+                        <i class="fas fa-file-archive"></i>
+                        Download All
+                    </a>
 
                 </div>
 
-            @else
-            
-                <span class="text-info">
-                    <i class="fas fa-info-circle"></i>
-                    No file found
-                </span>
-
             @endif
-    
+
         </div>
 
     </div>
+    
 
 
 

@@ -68,6 +68,15 @@ class User extends Authenticatable
         return false;
     }
 
+    public function isApproved()
+    {
+        if ($this->approved)
+        {
+            return true;
+        }
+        return false;
+    }
+
 
     public function papers()
     {
@@ -77,6 +86,12 @@ class User extends Authenticatable
     public function materials()
     {
         return $this->hasMany(Material::class);
+    }
+
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
     }
 
 }
