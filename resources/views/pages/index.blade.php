@@ -5,9 +5,9 @@
 @section('header')
     
 
-    <div class="bg-light border-bottom px-4 py-5">
+    <div class="bg-blue text-white px-4 py-5">
 
-        <div class="container p-0 py-4">
+        <div class="container p-0">
 
             <h2>{{ env('APP_NAME') }}</h2>
             <p>
@@ -28,7 +28,7 @@
 
 @section('content')
 
-    <div class="row row-cols-1 row-cols-lg-2 text-center my-5">
+    <div class="row row-cols-1 row-cols-lg-2 text-center">
 
         <div class="col mb-5">
             <div class="bg-light rounded border p-4">

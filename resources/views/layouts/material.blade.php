@@ -34,14 +34,14 @@
 
 
 
-            <div class="bg-light border-bottom px-4">
+            <div class="bg-blue text-white border-bottom px-4 py-5">
 
-                <div class="container px-0 py-4">
+                <div class="container px-0">
     
                     <div class="d-flex">
     
                         <div class="mr-4">
-                            <button class="btn bg-blue text-white" id="menu-toggle" style="padding: 11px 16px; font-size: 1rem">
+                            <button class="btn bg-dark-blue text-white" id="menu-toggle" style="padding: 11px 16px; font-size: 1rem">
                                 <i class="fas fa-align-left"></i>
                             </button>
                         </div>

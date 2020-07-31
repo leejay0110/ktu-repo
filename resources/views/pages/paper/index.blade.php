@@ -5,9 +5,9 @@
 @section('header')
     
 
-    <div class="bg-light border-bottom px-4 py-5">
+    <div class="bg-blue text-white px-4 py-5">
 
-        <div class="container p-0 py-4">
+        <div class="container p-0">
 
             <h4>Looking for Past Examination Papers?</h4>
     
@@ -18,12 +18,12 @@
                 <div class="form-group mb-0">
     
                     <label for="">
-                        Start by typing the <strong>course title</strong>, <strong>course code</strong> or <strong>examiner name</strong>.
+                        Start by typing the <em>course title</em>, <em>course code</em> or <em>examiner name</em>.
                     </label>
                     <div class="input-group">
                         <input list="usersList" type="search" name="query" class="form-control" id="paperSearch" autocomplete="off" required>
                         <div class="input-group-append">
-                            <button type="submit" class="btn btn-blue">
+                            <button type="submit" class="btn btn-warning">
                                 <i class="fas fa-search"></i>
                             </button>
                         </div>

@@ -18,9 +18,9 @@
 
 @section('header')
     
-    <div class="bg-light py-4">
+    <div class="mt-5">
 
-        <div class="container px-0 pt-0 pb-5">
+        <div class="container p-0">
 
             <h4>Looking for Course Materials?</h4>
 
@@ -31,12 +31,12 @@
                 <div class="form-group mb-0">
 
                     <label>
-                        Start by typing the <strong>course title</strong>, <strong>course code</strong> or <strong>lecturer name</strong>.
+                        Start by typing the <em>course title</em>, <em>course code</em> or <em>lecturer name</em>.
                     </label>
                     <div class="input-group">
                         <input list="usersList" type="search" name="query" class="form-control" id="paperSearch" autocomplete="off" required>
                         <div class="input-group-append">
-                            <button type="submit" class="btn btn-blue">
+                            <button type="submit" class="btn btn-warning">
                                 <i class="fas fa-search"></i>
                             </button>
                         </div>

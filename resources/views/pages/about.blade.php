@@ -5,9 +5,9 @@
 @section('header')
     
 
-    <div class="bg-light border-bottom px-4 py-5">
+    <div class="bg-blue text-white px-4 py-5">
 
-        <div class="container p-0 py-4">
+        <div class="container p-0">
 
             <h3>About {{ env('APP_NAME') }}</h3>
 

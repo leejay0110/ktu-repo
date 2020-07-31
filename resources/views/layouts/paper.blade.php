@@ -24,11 +24,11 @@
     @yield('header')
     
 
-    <div id="app">
+    <div id="app" class="bg-light">
 
 
 
-        <section id="app-content" class="px-4 py-5">
+        <section id="app-content" class="bg-white px-4 py-5">
 
             <div class="container p-0">
                 @yield('content')

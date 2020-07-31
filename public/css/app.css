@@ -11,6 +11,7 @@ html, body {
 .btn-blue { background-color: #003554 !important; color: white !important }
 .btn-dark-blue { background-color: #012c46 !important; color: white !important }
 
+.bg-dark-blue { background-color: #012c46 !important }
 .bg-blue { background-color: #003554 !important }
 .text-red { color: #540000 !important }
 .text-blue { color: #003554 !important }
@@ -47,6 +48,10 @@ html, body {
     display: none;
 }
 
+
+.container {
+    max-width: 1024px;
+}
 
 
 /* small screens */

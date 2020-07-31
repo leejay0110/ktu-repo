@@ -1,10 +1,10 @@
-<nav class="navbar navbar-expand-lg  navbar-dark bg-blue px-4 py-3">
+<nav class="navbar navbar-expand-lg bg-dark-blue navbar-dark px-4 py-3">
 
     <div class="container p-0">
 
         <a href="{{ route('homepage') }}" class="navbar-brand mb-0 h1">{{ env('APP_NAME') }}</a>
 
-        <button class="navbar-toggler btn btn-dark-blue border-0 p-2" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        <button class="navbar-toggler btn btn-dark-blue border-0" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-align-justify"></i>
         </button>
@@ -60,7 +60,7 @@
 
                 <div class="dropdown">
 
-                    <button class="btn btn-dark-blue dropdown-toggle" type="button" id="appDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-blue dropdown-toggle" type="button" id="appDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-user-circle"></i>
                         {{ Auth::user()->username }}
                     </button>
@@ -90,7 +90,7 @@
 
         
             @guest
-                <a href="{{ route('login.show') }}" class="text-light">
+                <a href="{{ route('login.show') }}" class="btn btn-blue">
                     Sign in <i class="fas fa-sign-in-alt"></i>
                 </a>
             @endguest
