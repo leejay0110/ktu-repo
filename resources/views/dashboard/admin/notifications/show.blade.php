@@ -16,27 +16,59 @@
 
 @section('content')
 
-    <div class="bg-white rounded border p-4">
+    <div class="card my-5">
 
-        <h3>New User Registered</h3>
+        <div class="card-header">
+            <h6 class="mb-0">
+                <i class="fas fa-bell"></i>
+                New User Registered
+            </h6>
+        </div>
 
-        <hr>
 
-        <p>
+        <div class="card-body">
 
-            <a href="{{ route('admin.users.show', $notification->data['id']) }}">{{ $notification->data['name'] }}</a>
-            registered {{ $notification->created_at->diffForHumans() }}
+            <p>
+    
+                <a href="{{ route('admin.users.show', $notification->data['id']) }}">{{ $notification->data['name'] }}</a>
+                registered {{ $notification->created_at->diffForHumans() }}
+    
+            </p>
+    
+            <h6>Roles</h6>
+            
+            <ul class="mb-0">
+                @if ( $user->roles()->count() )
+                    
+                    @foreach ( $user->roles as $role)
+                        <li>
+                            {{ ( $role->name  == 'pep upload' ) ? 'Past Examination Paper' : 'Course Materials' }} Upload
+                        </li>
+                    @endforeach
 
-        </p>
+                @else
+                    
+                    <li>
+                        <p class="text-info mb-0">No role was found for this user</p>
+                    </li>
+                    
+                @endif
+            </ul>
+    
+            
+            @if (! $approved)
 
-        
-        @if (! $active)
-            <form action="{{ route('admin.users.activate', $notification->data['id']) }}" method="POST">
-                @csrf
-                @method('put')
-                <button type="submit" class="btn btn-success d-block">Activate User</button>
-            </form>
-        @endif
+                <br>
+
+                <form action="{{ route('admin.users.approve', $notification->data['id']) }}" method="POST">
+                    @csrf
+                    @method('put')
+                    <button type="submit" class="btn btn-success d-block">Approve Account</button>
+                </form>
+            @endif
+
+        </div>
+
 
     </div>
 

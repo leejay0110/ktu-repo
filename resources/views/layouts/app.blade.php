@@ -16,9 +16,12 @@
     @include('partials.navbar')
     @include('partials.errors')
 
-    <div id="app">
 
-        <div id="app-content" class="p-4">
+    @yield('header')
+
+    <div id="app" class="bg-white">
+
+        <div id="app-content" class="px-4 py-5">
 
             <div class="container p-0">
                 @yield('content')

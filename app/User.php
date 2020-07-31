@@ -68,6 +68,15 @@ class User extends Authenticatable
         return false;
     }
 
+    public function isApproved()
+    {
+        if ($this->approved)
+        {
+            return true;
+        }
+        return false;
+    }
+
 
     public function papers()
     {

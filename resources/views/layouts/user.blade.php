@@ -28,7 +28,7 @@
 
 
 
-        <section id="app-content" class="p-4">
+        <section id="app-content" class="px-4 py-5">
 
             <div class="container p-0 mb-4">
 
@@ -36,7 +36,7 @@
 
                     <div class="mr-4">
                         <button class="btn bg-blue text-white" id="menu-toggle" style="padding: 11px 16px; font-size: 1rem">
-                            <i class="fas fa-bars"></i>
+                            <i class="fas fa-align-left"></i>
                         </button>
                     </div>
 
@@ -57,6 +57,7 @@
 
     </div>
 
+    <div id="app-overlay"></div>
 
     <script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>

@@ -48,10 +48,14 @@ class MaterialController extends Controller
 
     public function user(User $user)
     {
-        return view('pages.material.user', [
-            'user' => $user
-        ]);
-    }
+        
+        if ( $user->roles->pluck('name')->contains('cm upload') ) {
+            return view('pages.material.user', [
+                'user' => $user
+            ]);
+        }
+        abort(404);
 
+    }
 
 }

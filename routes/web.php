@@ -65,6 +65,7 @@ Route::get('admin/users', 'admin\UserController@index')->name('admin.users');
 Route::get('admin/users/{user}', 'admin\UserController@show')->name('admin.users.show');
 Route::put('admin/users/{user}/activate', 'admin\UserController@activate')->name('admin.users.activate');
 Route::put('admin/users/{user}/deactivate', 'admin\UserController@deactivate')->name('admin.users.deactivate');
+Route::put('admin/users/{user}/approve', 'admin\UserController@approve')->name('admin.users.approve');
 Route::put('admin/users/{user}/password_reset', 'admin\UserController@resetPassword')->name('admin.users.password_reset');
 
 
@@ -140,3 +141,5 @@ Route::delete('user/materials/files/{file}/destroy', 'user\FileController@destro
 // Route::get('file/open/{paper}', 'FileController@open')->name('paper.open');
 Route::get('papers/{paper}/download', 'FileController@downloadPaper')->name('papers.download');
 Route::get('material/{file}/download', 'FileController@downloadMaterial')->name('materials.download');
+
+Route::get('materials/{material}/donwload/all', 'FileController@downloadAll')->name('materials.download.all');

@@ -57,7 +57,7 @@ class RegisterController extends Controller
 
 
         
-        return redirect()->route('login.show')->with('success', 'Your accunt has been created but awaitng activation. Please contact the admin.');
+        return redirect()->route('login.show')->with('success', 'Your accunt has been created but awaitng approval.');
 
 
 

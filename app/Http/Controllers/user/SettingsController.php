@@ -16,6 +16,7 @@ class SettingsController extends Controller
     {
         $this->middleware('auth');
         $this->middleware('auth.user');
+        $this->middleware('check.approval');
         $this->middleware('check.active.status');
     }
 
@@ -48,7 +49,7 @@ class SettingsController extends Controller
         $user->email = $request->email;
         $user->save();
 
-        return redirect()->back()->with('success', 'Details updated successfully.');
+        return redirect()->route('user.settings.details')->with('success', 'Details updated successfully.');
         
     }
 

@@ -21,45 +21,61 @@
     @include('partials.errors')
     
 
-    <div id="app">
+    <div id="app" class="">
 
 
-        <section id="app-menu" class="p-4">
+        <section id="app-menu">
             <x-material-users/>
         </section>
 
 
 
-        <section id="app-content" class="p-4">
+        <section id="app-content">
 
-            <div class="container p-0">
 
-                <div class="d-flex">
 
-                    <div class="mr-4">
-                        <button class="btn bg-blue text-white" id="menu-toggle" style="padding: 11px 16px; font-size: 1rem">
-                            <i class="fas fa-bars"></i>
-                        </button>
+            <div class="bg-light border-bottom px-4">
+
+                <div class="container px-0 py-4">
+    
+                    <div class="d-flex">
+    
+                        <div class="mr-4">
+                            <button class="btn bg-blue text-white" id="menu-toggle" style="padding: 11px 16px; font-size: 1rem">
+                                <i class="fas fa-align-left"></i>
+                            </button>
+                        </div>
+    
+                        <div class="flex-fill">
+                            @yield('nav')
+                        </div>
+    
                     </div>
-
-                    <div class="flex-fill">
-                        @yield('nav')
-                    </div>
-
+    
                 </div>
 
+                @yield('header')
+
+                
             </div>
 
-            <br>
 
-            <div class="container p-0">
-                @yield('content')
-            </div>
 
+
+            @yield('content')
+
+            @yield('search-results')
+
+            @yield('recent-materials')
+            
         </section>
-
+        
 
     </div>
+
+
+    <div id="app-overlay"></div>
+
 
     @include('partials.footer')
 

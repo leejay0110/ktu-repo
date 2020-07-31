@@ -2,11 +2,10 @@
 
 namespace App\View\Components;
 
-use App\User;
-use App\Material;
 use Illuminate\View\Component;
+use App\Material;
 
-class MaterialUsers extends Component
+class RecentMaterials extends Component
 {
     /**
      * Create a new component instance.
@@ -25,14 +24,8 @@ class MaterialUsers extends Component
      */
     public function render()
     {
-        $users = User::whereHas('roles', function($q){
-            $q->whereIn('roles.name', ['cm upload']);   
-        })->get();
-        
         $materials = Material::latest()->limit(3)->get();
-
-        return view('components.material-users', [
-            'users' => $users,
+        return view('components.recent-materials', [
             'materials' => $materials
         ]);
     }

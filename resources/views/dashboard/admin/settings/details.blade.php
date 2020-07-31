@@ -17,32 +17,39 @@
 @section('content')
     
 
-    <div class="bg-white rounded border p-4">
+    <div class="card my-5">
 
-        <h3>{{ Auth::user()->name }}</h3>
-    
-        <hr>
-    
-        <dl class="row mb-4">
-    
-            <dt class="col-lg-3">Username</dt>
-            <dd class="col-lg-9">{{ Auth::user()->username }}</dd>
-    
-            <dt class="col-lg-3">Name</dt>
-            <dd class="col-lg-9">{{ Auth::user()->name }}</dd>
-    
-            <dt class="col-lg-3">Email</dt>
-            <dd class="col-lg-9">{{ Auth::user()->email }}</dd>
-    
-            <dt class="col-lg-3">Created at</dt>
-            <dd class="col-lg-9">{{ Auth::user()->created_at->isoFormat('LLL') }}</dd>
-    
-            <dt class="col-lg-3">Last Updated at</dt>
-            <dd class="col-lg-9">{{ Auth::user()->updated_at->isoFormat('LLL') }}</dd>
-    
-        </dl>
+        <div class="card-header">
+            <h6 class="mb-0">Admin Details</h6>
+        </div>
 
-        <a href="{{ route('admin.settings.edit-details') }}" class="d-block">Edit Details</a>
+    
+        <div class="card-body">
+            
+            <dl class="row mb-0">
+        
+                <dt class="col-lg-3">Username</dt>
+                <dd class="col-lg-9">{{ Auth::user()->username }}</dd>
+        
+                <dt class="col-lg-3">Name</dt>
+                <dd class="col-lg-9">{{ Auth::user()->name }}</dd>
+        
+                <dt class="col-lg-3">Email</dt>
+                <dd class="col-lg-9">{{ Auth::user()->email }}</dd>
+        
+                <dt class="col-lg-3">Created at</dt>
+                <dd class="col-lg-9">{{ Auth::user()->created_at->isoFormat('LLL') }}</dd>
+        
+                <dt class="col-lg-3">Last Updated at</dt>
+                <dd class="col-lg-9">{{ Auth::user()->updated_at->isoFormat('LLL') }}</dd>
+        
+            </dl>
+
+        </div>
+    
+        <div class="card-footer">
+            <a href="{{ route('admin.settings.edit-details') }}" class="d-block">Edit Details</a>
+        </div>
 
     </div>
 

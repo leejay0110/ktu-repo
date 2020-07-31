@@ -41,13 +41,23 @@ class UserController extends Controller
     }
 
 
+    function approve(User $user)
+    {
+
+        $user->approved = 1;
+        $user->save();
+
+        return redirect()->back()->with('success', 'Account approved successfully.');
+
+    }
+
     function activate(User $user)
     {
 
         $user->active = 1;
         $user->save();
 
-        return redirect()->back()->with('success', 'User activated successful.');
+        return redirect()->back()->with('success', 'User activated successfully.');
 
     }
 
@@ -57,7 +67,7 @@ class UserController extends Controller
         $user->active = 0;
         $user->save();
 
-        return redirect()->back()->with('success', 'User deactived successful.');
+        return redirect()->back()->with('success', 'User deactived successfully.');
 
     }
 
@@ -70,7 +80,6 @@ class UserController extends Controller
         return redirect()->back()->with('success', 'Password reset was successful. New password = pass1234.');
 
     }
-
-
+    
 
 }

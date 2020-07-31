@@ -1,17 +1,26 @@
-<div class="text-center border-bottom bg-light text-blue p-4">
+<nav class="navbar navbar-dark bg-blue px-4 py-3">
 
-    <div class="container p-0">
+    <span class="navbar-brand">
+        <i class="fas fa-user-circle"></i>
+        USER DASHBOARD
+    </span>
 
-        @if ( Auth::user()->avatar )
-            <img src="{{ asset('/storage' . Str::after(Auth::user()->avatar, 'public')) }}" alt="avatar" class="img-thumbnail rounded-circle" style="width: 7rem">
-        @else
-            <img src="{{ asset('img/default.png') }}" alt="avatar" class="img-thumbnail rounded-circle" style="width: 7rem">
-        @endif
-    
-        <h5 class="mb-0">{{ Auth::user()->name }}</h5>
-        <small>{{ Auth::user()->username }}</small>
+    <button class="btn btn-danger btn-sm" id="menu-close">
+        <i class="fas fa-arrow-left"></i>
+    </button>
 
-    </div>
+</nav>
+
+<div class="border-bottom bg-light text-center p-4">
+
+    @if ( Auth::user()->avatar )
+        <img src="{{ asset('/storage' . Str::after(Auth::user()->avatar, 'public')) }}" alt="avatar" class="img-thumbnail rounded-circle" style="width: 7rem">
+    @else
+        <img src="{{ asset('img/default.png') }}" alt="avatar" class="img-thumbnail rounded-circle" style="width: 7rem">
+    @endif
+
+    <h6 class="mb-0 mt-2">{{ Auth::user()->name }}</h6>
+    <small>{{ Auth::user()->username }}</small>
 
 </div>
 

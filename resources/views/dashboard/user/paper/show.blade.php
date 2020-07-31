@@ -16,30 +16,39 @@
 
 @section('content')
 
-    <div class="bg-white rounded border p-4 mb-4">
+    <div class="card my-5">
 
-        <h3>{{ $paper->course_title }}</h3>
-        <p class="text-muted">{{ $paper->course_code }}</p>
+        <div class="card-header">
+
+            <h5 class="mb-0">{{ $paper->course_title }}</h5>
+            <p class="text-muted mb-0">{{ $paper->course_code }}</p>
+
+        </div>
+
+        <div class="card-body">
+
+            <dl class="row mb-0">
+        
+                <dt class="col-lg-3">Examiner Name</dt>
+                <dd class="col-lg-9">{{ $paper->examiner }}</dd>
+        
+                <dt class="col-lg-3">Year</dt>
+                <dd class="col-lg-9">{{ $paper->year }}</dd>
+        
+                <dt class="col-lg-3">Semester</dt>
+                <dd class="col-lg-9">{{ $paper->semester }}</dd>
+        
+                <dt class="col-lg-3">Created</dt>
+                <dd class="col-lg-9">{{ $paper->created_at->isoFormat('LLL') }}</dd>
+        
+            </dl>
+
+        </div>
     
-        <hr>
+        <div class="card-footer">
+            <a href="{{ route('user.papers.edit', $paper) }}">Edit Details</a>
+        </div>
     
-        <dl class="row">
-    
-            <dt class="col-lg-3">Examiner Name</dt>
-            <dd class="col-lg-9">{{ $paper->examiner }}</dd>
-    
-            <dt class="col-lg-3">Year</dt>
-            <dd class="col-lg-9">{{ $paper->year }}</dd>
-    
-            <dt class="col-lg-3">Semester</dt>
-            <dd class="col-lg-9">{{ $paper->semester }}</dd>
-    
-            <dt class="col-lg-3">Created</dt>
-            <dd class="col-lg-9">{{ $paper->created_at->isoFormat('LLL') }}</dd>
-    
-        </dl>
-    
-        <a href="{{ route('user.papers.edit', $paper) }}">Edit Details</a>
 
     </div>
 

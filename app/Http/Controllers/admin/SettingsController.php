@@ -46,7 +46,7 @@ class SettingsController extends Controller
         $user->email = $request->email;
         $user->save();
 
-        return redirect()->back()->with('success', 'Update was successful.');
+        return redirect()->route('admin.settings.details')->with('success', 'Update was successful.');
         
     }
 

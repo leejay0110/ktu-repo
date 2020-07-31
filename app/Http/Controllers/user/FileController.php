@@ -17,6 +17,7 @@ class FileController extends Controller
     {
         $this->middleware('auth');
         $this->middleware('auth.user');
+        $this->middleware('check.approval');
         $this->middleware('check.active.status');
     }
 

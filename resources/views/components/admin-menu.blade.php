@@ -1,12 +1,24 @@
-<div class="text-center border-bottom bg-light text-blue p-4">
+<nav class="navbar navbar-dark bg-blue px-4 py-3">
+
+    <span class="navbar-brand">
+
+        <i class="fas fa-shield-alt"></i>
+        ADMIN DASHBOARD
+
+    </span>
+
+    <button class="btn btn-danger btn-sm" id="menu-close">
+        <i class="fas fa-arrow-left"></i>
+    </button>
+
+</nav>
+
+<div class="text-center bg-light border-bottom p-4">
     
-    <div class="container p-0">
+    <i class="fas fa-shield-alt fa-3x text-blue"></i>
 
-        <i class="fas fa-user-shield fa-2x"></i>
-        <h5 class="mb-0">{{ Auth::user()->name }}</h5>
-        <small>{{ Auth::user()->username }} (admin)</small>
-
-    </div>
+    <h5 class="mb-0 mt-2">{{ Auth::user()->name }}</h5>
+    <small>{{ Auth::user()->username }}</small>
 
 </div>
 
@@ -18,7 +30,7 @@
     
         <div class="accordian" id="menu-accordian">
     
-            <ul class="list-group list-group-flush">
+            <ul class="list-group list-group-flush rounded">
     
                 <li class="list-group-item">
                     <a class="text-dark" href="{{ route('admin.index') }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a>

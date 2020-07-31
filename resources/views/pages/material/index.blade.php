@@ -16,41 +16,76 @@
 @endsection
 
 
-@section('content')
-
-    <div class="bg-white rounded border shadow-sm p-4">
-
-        <h4>Looking for Course Materials?</h4>
-
-        <form id="material-search" action="{{ route('materials.search') }}" method="get">
-
-            @csrf
+@section('header')
     
-            <div class="form-group mb-0">
+    <div class="bg-light py-4">
 
-                <label>
-                    Start by typing the <strong>course title</strong>, <strong>course code</strong> or <strong>lecturer name</strong>.
-                </label>
-                <div class="input-group">
-                    <input list="usersList" type="search" name="query" class="form-control" id="paperSearch" autocomplete="off" required>
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-blue">
-                            <i class="fas fa-search"></i>
-                        </button>
+        <div class="container px-0 pt-0 pb-5">
+
+            <h4>Looking for Course Materials?</h4>
+
+            <form id="material-search" action="{{ route('materials.search') }}" method="get">
+
+                @csrf
+        
+                <div class="form-group mb-0">
+
+                    <label>
+                        Start by typing the <strong>course title</strong>, <strong>course code</strong> or <strong>lecturer name</strong>.
+                    </label>
+                    <div class="input-group">
+                        <input list="usersList" type="search" name="query" class="form-control" id="paperSearch" autocomplete="off" required>
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-blue">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
                     </div>
+
                 </div>
 
-            </div>
+            </form>
 
-        </form>
+        </div>
 
     </div>
 
-    <br>
+@endsection
 
-    <div id="material-results"></div>
+
+
+@section('search-results')
+
+    <div class="bg-white px-4 py-5">
+
+        <div class="container p-0">
+            
+            <div id="material-results">
+                <div
+                    class="text-center d-flex align-items-center justify-content-center"
+                    style="min-height: 25vh; opacity: 0.5;"
+                >
+                    <img src="{{ asset('img/material.jpg') }}" class="rounded-circle">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
 
 @endsection
+
+
+
+
+@section('recent-materials')
+
+    <x-recent-materials/>
+    
+@endsection
+
+
 
 
 @section('scripts')

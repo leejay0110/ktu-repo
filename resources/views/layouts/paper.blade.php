@@ -19,55 +19,34 @@
     
     @include('partials.navbar')
     @include('partials.errors')
+
+    
+    @yield('header')
     
 
     <div id="app">
 
 
-        <section id="app-menu" class="p-4">
-            <x-recent-paper/>
-        </section>
 
-
-
-        <section id="app-content" class="p-4">
-
-
-            <div class="container p-0">
-
-                <div class="d-flex">
-
-                    <div class="mr-4">
-                        <button class="btn bg-blue text-white" id="menu-toggle" style="padding: 11px 16px; font-size: 1rem">
-                            <i class="fas fa-bars"></i>
-                        </button>
-                    </div>
-
-                    <div class="flex-fill">
-                        
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb mb-0">
-                                <li class="breadcrumb-item active" aria-current="page">Past Examination Papers</li>
-                            </ol>
-                        </nav>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <br>
+        <section id="app-content" class="px-4 py-5">
 
             <div class="container p-0">
                 @yield('content')
             </div>
-
-
+            
+            
         </section>
-
-
+        
+        <div class="bg-light border-top px-4 py-5">
+            
+            <div class="container p-0">
+                <x-recent-paper/>
+            </div>
+            
+        </div>
+        
     </div>
+    
 
     @include('partials.footer')
 

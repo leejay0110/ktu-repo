@@ -1,5 +1,5 @@
 
-<footer id="footer" class="bg-dark text-white p-4">
+<footer id="footer" class="bg-dark text-white px-4 py-5">
 
     <div class="container p-0">
 
@@ -7,7 +7,7 @@
 
             <div class="col-lg mb-4 mb-lg-0">
                 <h3>{{ env('APP_NAME') }}</h3>
-                <p>Copyright &COPY; {{ now()->year }} <br> kturepo.edu.gh</p>
+                <p>Copyright &COPY; {{ now()->year }} <br> repo.ktu.edu.gh</p>
             </div>
 
 
