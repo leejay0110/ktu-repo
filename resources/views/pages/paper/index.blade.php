@@ -18,7 +18,7 @@
                 <div class="form-group mb-0">
     
                     <label for="">
-                        Start by typing the <em>course title</em>, <em>course code</em> or <em>examiner name</em>.
+                        Start by typing the course title, course code or examiner name.
                     </label>
                     <div class="input-group">
                         <input list="usersList" type="search" name="query" class="form-control" id="paperSearch" autocomplete="off" required>

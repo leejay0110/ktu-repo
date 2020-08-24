@@ -80,7 +80,10 @@
     
                 </div>
         
-                <button type="submit" class="btn btn-success btn-block">Submit</button>
+                <button type="submit" class="btn btn-success btn-block">
+                    <i class="fas fa-check"></i>
+                    Submit
+                </button>
         
             </form>
     

@@ -30,9 +30,7 @@
         
                 <div class="form-group mb-0">
 
-                    <label>
-                        Start by typing the <em>course title</em>, <em>course code</em> or <em>lecturer name</em>.
-                    </label>
+                    <label>Start by typing the course title, course code or lecturer name.</label>
                     <div class="input-group">
                         <input list="usersList" type="search" name="query" class="form-control" id="paperSearch" autocomplete="off" required>
                         <div class="input-group-append">

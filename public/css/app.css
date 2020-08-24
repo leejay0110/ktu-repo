@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Recursive:wght@400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
 html, body {
     background-color: #F7FAFC;
-    font-family: 'Recursive', sans-serif;
+    /* font-family: 'Lato', sans-serif; */
+    -webkit-font-smoothing: antialiased;
 }
 
 

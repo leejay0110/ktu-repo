@@ -13,7 +13,7 @@
 
             @foreach ($papers as $paper)
 
-                <li class="list-group-item list-group-item-light p-4">
+                <li class="list-group-item bg-light p-4">
 
                     <div class="d-flex">
                         

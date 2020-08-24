@@ -15,7 +15,7 @@
             
             @foreach ($materials as $material)
     
-                <li class="list-group-item list-group-item-light p-4">
+                <li class="list-group-item bg-light p-4">
     
                     <h5 class="mb-0">{{ $material->course_title }}</h5>
                     <small class="text-muted">{{ $material->course_code }}</small>

@@ -18,7 +18,12 @@
 
         <div class="list-group list-group-flush"  id="menu-list">
             @foreach ($users as $user)
-                <a class="list-group-item list-group-item-action" href="{{ route('materials.user', $user) }}">{{ $user->name }}</a>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href="{{ route('materials.user', $user) }}">{{ $user->name }}</a>
+                    <span class="badge badge-dark badge-pill">
+                        {{ $user->materials->count() }}
+                    </span>
+                </li>
             @endforeach
         </div>
     
